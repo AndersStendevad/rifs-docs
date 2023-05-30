@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifs package &mdash; docs 0.0.1
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rifs.hubert_utils package" href="rifs.hubert_utils.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">rifs package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifs.hubert_utils.html">rifs.hubert_utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rifs.cli">rifs.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rifs.fairseq">rifs.fairseq module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifs.fairseq.fairseq_constructor"><code class="docutils literal notranslate"><span class="pre">fairseq_constructor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifs.fairseq.run_fairseq_pretrain"><code class="docutils literal notranslate"><span class="pre">run_fairseq_pretrain()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rifs.hubert">rifs.hubert module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifs.hubert.hubert_preprocess_1st"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_1st()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifs.hubert.hubert_preprocess_2nd"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_2nd()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rifs.hubert_preprocess">rifs.hubert_preprocess module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifs.hubert_preprocess.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rifs.utils">rifs.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifs.utils.is_package_installed"><code class="docutils literal notranslate"><span class="pre">is_package_installed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rifs">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html">rifs.hubert_utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.cli">rifs.cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.fairseq">rifs.fairseq module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.fairseq.fairseq_constructor"><code class="docutils literal notranslate"><span class="pre">fairseq_constructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.fairseq.run_fairseq_pretrain"><code class="docutils literal notranslate"><span class="pre">run_fairseq_pretrain()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert">rifs.hubert module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert.hubert_preprocess_1st"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_1st()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert.hubert_preprocess_2nd"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_2nd()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert_preprocess">rifs.hubert_preprocess module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_preprocess.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.utils">rifs.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.utils.is_package_installed"><code class="docutils literal notranslate"><span class="pre">is_package_installed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rifs.hubert_utils.html">rifs.hubert_utils package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">rifs package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rifs/rifs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rifs-package">
+<h1>rifs package<a class="headerlink" href="#rifs-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rifs.hubert_utils.html">rifs.hubert_utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rifs.hubert_utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.hubert_utils.html#module-rifs.hubert_utils.common_utils">rifs.hubert_utils.common_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.common_utils.create_tsv"><code class="docutils literal notranslate"><span class="pre">create_tsv()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.hubert_utils.html#module-rifs.hubert_utils.feature_utils">rifs.hubert_utils.feature_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.feature_utils.dump_features"><code class="docutils literal notranslate"><span class="pre">dump_features()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.feature_utils.extract_feature_hubert"><code class="docutils literal notranslate"><span class="pre">extract_feature_hubert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.feature_utils.extract_feature_mfcc"><code class="docutils literal notranslate"><span class="pre">extract_feature_mfcc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.feature_utils.get_shard_range"><code class="docutils literal notranslate"><span class="pre">get_shard_range()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.hubert_utils.html#module-rifs.hubert_utils.kmeans">rifs.hubert_utils.kmeans module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.kmeans.ApplyKmeans"><code class="docutils literal notranslate"><span class="pre">ApplyKmeans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.kmeans.get_km_label"><code class="docutils literal notranslate"><span class="pre">get_km_label()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.kmeans.learn_kmeans"><code class="docutils literal notranslate"><span class="pre">learn_kmeans()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifs.hubert_utils.html#rifs.hubert_utils.kmeans.load_feature"><code class="docutils literal notranslate"><span class="pre">load_feature()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.hubert_utils.html#module-rifs.hubert_utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifs.cli">
+<span id="rifs-cli-module"></span><h2>rifs.cli module<a class="headerlink" href="#module-rifs.cli" title="Permalink to this heading"></a></h2>
+<p>CLI for rifs package. Contains all the commands that the library supports.
+The CLI is written with click.</p>
+</section>
+<section id="module-rifs.fairseq">
+<span id="rifs-fairseq-module"></span><h2>rifs.fairseq module<a class="headerlink" href="#module-rifs.fairseq" title="Permalink to this heading"></a></h2>
+<p>Interface for fairseq pre-training.
+Contains the commands found fairseq/examples/…</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.fairseq.fairseq_constructor">
+<span class="sig-prename descclassname"><span class="pre">rifs.fairseq.</span></span><span class="sig-name descname"><span class="pre">fairseq_constructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#rifs.fairseq.fairseq_constructor" title="Permalink to this definition"></a></dt>
+<dd><p>Creates the fairseq pre-training command.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>fairseq_path: str</dt><dd><p>Path to fairseq directory.</p>
+</dd>
+<dt>model_dict: dict</dt><dd><p>Dictionary of arguments to pass to fairseq pre-training.</p>
+</dd>
+<dt>ctx: dict</dt><dd><p>Dictionary of rifs context arguments.</p>
+</dd>
+<dt>manifest_source: str</dt><dd><p>Path to source manifest folder.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<p>str</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.fairseq.run_fairseq_pretrain">
+<span class="sig-prename descclassname"><span class="pre">rifs.fairseq.</span></span><span class="sig-name descname"><span class="pre">run_fairseq_pretrain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.fairseq.run_fairseq_pretrain" title="Permalink to this definition"></a></dt>
+<dd><p>Run fairseq pre-training.</p>
+<section id="id1">
+<h3>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>fairseq_path: str</dt><dd><p>Path to fairseq directory.</p>
+</dd>
+<dt>model_dict: dict</dt><dd><p>Dictionary of arguments to pass to fairseq pre-training.</p>
+</dd>
+<dt>ctx: dict</dt><dd><p>Dictionary of rifs context arguments.</p>
+</dd>
+<dt>manifest_source: str</dt><dd><p>Path to source manifest folder.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>None</p>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-rifs.hubert">
+<span id="rifs-hubert-module"></span><h2>rifs.hubert module<a class="headerlink" href="#module-rifs.hubert" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert.hubert_preprocess_1st">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert.</span></span><span class="sig-name descname"><span class="pre">hubert_preprocess_1st</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.hubert.hubert_preprocess_1st" title="Permalink to this definition"></a></dt>
+<dd><p>python preprocess.py –root-dir /home/datasets –feat-type mfcc –exp-dir ./exp –num-cluster 100</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert.hubert_preprocess_2nd">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert.</span></span><span class="sig-name descname"><span class="pre">hubert_preprocess_2nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.hubert.hubert_preprocess_2nd" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rifs.hubert_preprocess">
+<span id="rifs-hubert-preprocess-module"></span><h2>rifs.hubert_preprocess module<a class="headerlink" href="#module-rifs.hubert_preprocess" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_preprocess.main">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_preprocess.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.hubert_preprocess.main" title="Permalink to this definition"></a></dt>
+<dd><p>Main function</p>
+</dd></dl>
+
+</section>
+<section id="module-rifs.utils">
+<span id="rifs-utils-module"></span><h2>rifs.utils module<a class="headerlink" href="#module-rifs.utils" title="Permalink to this heading"></a></h2>
+<p>Utils</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.utils.is_package_installed">
+<span class="sig-prename descclassname"><span class="pre">rifs.utils.</span></span><span class="sig-name descname"><span class="pre">is_package_installed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">package</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.utils.is_package_installed" title="Permalink to this definition"></a></dt>
+<dd><p>Utility checking whether a Python package is installed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>package</strong> (<em>str</em>) – Name of the package to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the package is installed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifs">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rifs" title="Permalink to this heading"></a></h2>
+<p>The main entrypoint for interacting with the rifs project</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rifs.hubert_utils.html" class="btn btn-neutral float-right" title="rifs.hubert_utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

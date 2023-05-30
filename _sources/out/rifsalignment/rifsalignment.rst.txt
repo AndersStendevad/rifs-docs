@@ -1,0 +1,53 @@
+rifsalignment package
+=====================
+
+Submodules
+----------
+
+rifsalignment.algorithms module
+-------------------------------
+
+.. automodule:: rifsalignment.algorithms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsalignment.align\_csv module
+-------------------------------
+
+.. automodule:: rifsalignment.align_csv
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsalignment.base module
+-------------------------
+
+.. automodule:: rifsalignment.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsalignment.datamodels module
+-------------------------------
+
+.. automodule:: rifsalignment.datamodels
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsalignment.preprocess module
+-------------------------------
+
+.. automodule:: rifsalignment.preprocess
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: rifsalignment
+   :members:
+   :undoc-members:
+   :show-inheritance:

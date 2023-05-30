@@ -1,0 +1,7 @@
+rifs.hubert module
+==================
+
+.. automodule:: rifs.hubert
+   :members:
+   :undoc-members:
+   :show-inheritance:

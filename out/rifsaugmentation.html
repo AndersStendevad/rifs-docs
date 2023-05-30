@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifsaugmentation package &mdash; Home Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rifsdatasets package" href="rifsdatasets.html" />
+    <link rel="prev" title="rifsalignment package" href="rifsalignment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Home
+              <img src="../_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets.html">The datasets available in rifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifsaugmentation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rifs-augmentation-library">Rifs Augmentation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsaugmentation.augment_all"><code class="docutils literal notranslate"><span class="pre">augment_all()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsaugmentation.augment_all">rifsaugmentation.augment_all module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsaugmentation.augment_all.augment_all"><code class="docutils literal notranslate"><span class="pre">augment_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsaugmentation.augmentation">rifsaugmentation.augmentation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsaugmentation.augmentation.ModifySpeedAugmentation"><code class="docutils literal notranslate"><span class="pre">ModifySpeedAugmentation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifsaugmentation.augmentation.NoiseAugmentation"><code class="docutils literal notranslate"><span class="pre">NoiseAugmentation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifsaugmentation.augmentation.RoomSimulationAugmentation"><code class="docutils literal notranslate"><span class="pre">RoomSimulationAugmentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsaugmentation.base">rifsaugmentation.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsaugmentation.base.BaseAugmentation"><code class="docutils literal notranslate"><span class="pre">BaseAugmentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsaugmentation.utils">rifsaugmentation.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsaugmentation.utils.load_wav_with_checks"><code class="docutils literal notranslate"><span class="pre">load_wav_with_checks()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsstatemachine.html">rifsstatemachine package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifstrain.html">rifstrain package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Home</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifsaugmentation package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/rifsaugmentation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rifsaugmentation">
+<span id="rifsaugmentation-package"></span><h1>rifsaugmentation package<a class="headerlink" href="#module-rifsaugmentation" title="Permalink to this heading"></a></h1>
+<section id="rifs-augmentation-library">
+<h2>Rifs Augmentation Library<a class="headerlink" href="#rifs-augmentation-library" title="Permalink to this heading"></a></h2>
+<p>This library contains functions to augment waveform files.</p>
+<p>We provide the following functionality:</p>
+<ul class="simple">
+<li><p>Augmenting with added noise from wav files.</p></li>
+<li><p>Augmenting with room characteristics and microphone placements.</p></li>
+<li><p>Augmenting with playback speed of the recording.</p></li>
+</ul>
+<p>All of the augmentations can be applied over a provided list of files using the
+rifs CLI. See the documentation of rifs for more information.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsaugmentation.augment_all">
+<span class="sig-prename descclassname"><span class="pre">rifsaugmentation.</span></span><span class="sig-name descname"><span class="pre">augment_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_room_simulation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsaugmentation.augment_all" title="Permalink to this definition"></a></dt>
+<dd><p>Main function. Augment all files in a given folder and deliver to target folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_path</strong> (<em>str</em>) – Path to the source data</p></li>
+<li><p><strong>target_path</strong> (<em>str</em>) – Path on where to deliver data.</p></li>
+<li><p><strong>with_room_simulation</strong> (<em>bool</em>) – Whether to perform room simulation.</p></li>
+<li><p><strong>speed</strong> (<em>float</em>) – Speed factor to apply to the audio. 1.0 is normal speed. Optional. Default: 1.0</p></li>
+<li><p><strong>noise_path</strong> (<em>str</em>) – Path to the noise data. Optional, no noise augmentation is performed.</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – Whether to recursively search for files in the data_path.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !ls data 
+clean  noise
+&gt;&gt;&gt; !ls data/clean 
+1.wav  2.wav 3.wav 4.wav 5.wav
+&gt;&gt;&gt; augment_all(&quot;data/clean&quot;, &quot;data/augmented_data&quot;, with_room_simulation=True, speed=1.1 noise_path=&quot;noise&quot;) 
+&gt;&gt;&gt; !ls augmented_data 
+1.wav 2.wav 3.wav 4.wav 5.wav
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifsaugmentation.augment_all">
+<span id="rifsaugmentation-augment-all-module"></span><h2>rifsaugmentation.augment_all module<a class="headerlink" href="#module-rifsaugmentation.augment_all" title="Permalink to this heading"></a></h2>
+<p>Augment all audios in a directory. Main adapter for the rifs CLI</p>
+<p>You may use this outside the CLI as well, but it is recommended to use the
+augment_all function directly in the CLI.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsaugmentation.augment_all.augment_all">
+<span class="sig-prename descclassname"><span class="pre">rifsaugmentation.augment_all.</span></span><span class="sig-name descname"><span class="pre">augment_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_room_simulation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsaugmentation.augment_all.augment_all" title="Permalink to this definition"></a></dt>
+<dd><p>Main function. Augment all files in a given folder and deliver to target folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_path</strong> (<em>str</em>) – Path to the source data</p></li>
+<li><p><strong>target_path</strong> (<em>str</em>) – Path on where to deliver data.</p></li>
+<li><p><strong>with_room_simulation</strong> (<em>bool</em>) – Whether to perform room simulation.</p></li>
+<li><p><strong>speed</strong> (<em>float</em>) – Speed factor to apply to the audio. 1.0 is normal speed. Optional. Default: 1.0</p></li>
+<li><p><strong>noise_path</strong> (<em>str</em>) – Path to the noise data. Optional, no noise augmentation is performed.</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – Whether to recursively search for files in the data_path.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; !ls data 
+clean  noise
+&gt;&gt;&gt; !ls data/clean 
+1.wav  2.wav 3.wav 4.wav 5.wav
+&gt;&gt;&gt; augment_all(&quot;data/clean&quot;, &quot;data/augmented_data&quot;, with_room_simulation=True, speed=1.1 noise_path=&quot;noise&quot;) 
+&gt;&gt;&gt; !ls augmented_data 
+1.wav 2.wav 3.wav 4.wav 5.wav
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-rifsaugmentation.augmentation">
+<span id="rifsaugmentation-augmentation-module"></span><h2>rifsaugmentation.augmentation module<a class="headerlink" href="#module-rifsaugmentation.augmentation" title="Permalink to this heading"></a></h2>
+<p>This module contains the augmentation classes.</p>
+<p>The augmentation classes are used to augment the data. Right now we support the
+following augmentation classes:</p>
+<ul class="simple">
+<li><p>NoiseAugmentation</p></li>
+<li><p>RoomSimulationAugmentation</p></li>
+<li><p>ModifySpeedAugmentation</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsaugmentation.augmentation.ModifySpeedAugmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsaugmentation.augmentation.</span></span><span class="sig-name descname"><span class="pre">ModifySpeedAugmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsaugmentation.augmentation.ModifySpeedAugmentation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsaugmentation.base.BaseAugmentation" title="rifsaugmentation.base.BaseAugmentation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAugmentation</span></code></a></p>
+<p>Modify the speed of the audio.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsaugmentation.augmentation.NoiseAugmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsaugmentation.augmentation.</span></span><span class="sig-name descname"><span class="pre">NoiseAugmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">noise_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsaugmentation.augmentation.NoiseAugmentation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsaugmentation.base.BaseAugmentation" title="rifsaugmentation.base.BaseAugmentation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAugmentation</span></code></a></p>
+<p>Add noise to the audio. Does not take train/dev/test sets into account.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsaugmentation.augmentation.RoomSimulationAugmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsaugmentation.augmentation.</span></span><span class="sig-name descname"><span class="pre">RoomSimulationAugmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsaugmentation.augmentation.RoomSimulationAugmentation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsaugmentation.base.BaseAugmentation" title="rifsaugmentation.base.BaseAugmentation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAugmentation</span></code></a></p>
+<p>Simulate the audio in a room.</p>
+</dd></dl>
+
+</section>
+<section id="module-rifsaugmentation.base">
+<span id="rifsaugmentation-base-module"></span><h2>rifsaugmentation.base module<a class="headerlink" href="#module-rifsaugmentation.base" title="Permalink to this heading"></a></h2>
+<p>Base classes for the rifsaugmentation library.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsaugmentation.base.BaseAugmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsaugmentation.base.</span></span><span class="sig-name descname"><span class="pre">BaseAugmentation</span></span><a class="headerlink" href="#rifsaugmentation.base.BaseAugmentation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Base class for all augmentation classes.</p>
+</dd></dl>
+
+</section>
+<section id="module-rifsaugmentation.utils">
+<span id="rifsaugmentation-utils-module"></span><h2>rifsaugmentation.utils module<a class="headerlink" href="#module-rifsaugmentation.utils" title="Permalink to this heading"></a></h2>
+<p>This module contains utility functions for the rifsaugmentation package.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsaugmentation.utils.load_wav_with_checks">
+<span class="sig-prename descclassname"><span class="pre">rifsaugmentation.utils.</span></span><span class="sig-name descname"><span class="pre">load_wav_with_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#rifsaugmentation.utils.load_wav_with_checks" title="Permalink to this definition"></a></dt>
+<dd><p>Load a wav file. Assert that the sample rate is equals to sr, that it is mono and is not empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The path to the wav file. Can be relative or absolute.</p></li>
+<li><p><strong>sr</strong> (<em>int</em><em>, </em><em>optional</em>) – The sample rate to load the wav file at, by default 16_000</p></li>
+<li><p><strong>mono</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to load the wav file as mono, by default True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>np.ndarray</em> – The loaded wav file.</p></li>
+<li><p><em>int</em> – The sample rate of the wav file.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rifsalignment.html" class="btn btn-neutral float-left" title="rifsalignment package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rifsdatasets.html" class="btn btn-neutral float-right" title="rifsdatasets package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

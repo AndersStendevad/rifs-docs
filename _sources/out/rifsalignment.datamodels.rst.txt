@@ -1,0 +1,7 @@
+rifsalignment.datamodels module
+===============================
+
+.. automodule:: rifsalignment.datamodels
+   :members:
+   :undoc-members:
+   :show-inheritance:

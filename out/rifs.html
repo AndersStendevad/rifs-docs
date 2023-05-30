@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifs package &mdash; Home Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rifsalignment package" href="rifsalignment.html" />
+    <link rel="prev" title="The datasets available in rifs" href="../datasets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Home
+              <img src="../_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets.html">The datasets available in rifs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.cli">rifs.cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.fairseq">rifs.fairseq module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.fairseq.check_fairseq_config"><code class="docutils literal notranslate"><span class="pre">check_fairseq_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.fairseq.fairseq_constructor"><code class="docutils literal notranslate"><span class="pre">fairseq_constructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.fairseq.flatten"><code class="docutils literal notranslate"><span class="pre">flatten()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.fairseq.run_fairseq_pretrain"><code class="docutils literal notranslate"><span class="pre">run_fairseq_pretrain()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert">rifs.hubert module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert.create_tsv"><code class="docutils literal notranslate"><span class="pre">create_tsv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert.fairseq_hubert_preprocess"><code class="docutils literal notranslate"><span class="pre">fairseq_hubert_preprocess()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert.hubert_preprocess_1st"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_1st()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert.hubert_preprocess_2nd"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_2nd()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.utils">rifs.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.utils.is_package_installed"><code class="docutils literal notranslate"><span class="pre">is_package_installed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsstatemachine.html">rifsstatemachine package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifstrain.html">rifstrain package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Home</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifs package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/rifs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rifs">
+<span id="rifs-package"></span><h1>rifs package<a class="headerlink" href="#module-rifs" title="Permalink to this heading"></a></h1>
+<p>The main entrypoint for interacting with the rifs project</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifs.cli">
+<span id="rifs-cli-module"></span><h2>rifs.cli module<a class="headerlink" href="#module-rifs.cli" title="Permalink to this heading"></a></h2>
+<p>CLI for rifs package. Contains all the commands that the library supports.
+The CLI is written with click.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: rifs [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
+</pre></div>
+</div>
+<dl>
+<dt>Options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--version</span></kbd></dt>
+<dd><p>Prints the version of the package.</p>
+</dd>
+<dt><kbd><span class="option">--verbose</span></kbd></dt>
+<dd><p>Enable verbose output.</p>
+</dd>
+<dt><kbd><span class="option">--quiet</span></kbd></dt>
+<dd><p>Disable all output.</p>
+</dd>
+<dt><kbd><span class="option">--seed <var>INTEGER</var></span></kbd></dt>
+<dd><p>Seed for the random number generator. Default: 0</p>
+</dd>
+<dt><kbd><span class="option">--data-path <var>PATH</var></span></kbd></dt>
+<dd><p>Path to the data directory. Default: data</p>
+</dd>
+<dt><kbd><span class="option">--model-path <var>PATH</var></span></kbd></dt>
+<dd><p>Path to the model directory. Default: models</p>
+</dd>
+<dt><kbd><span class="option">--output-path <var>PATH</var></span></kbd></dt>
+<dd><p>Path to the output directory. Default: output</p>
+</dd>
+<dt><kbd><span class="option">--noise-path <var>PATH</var></span></kbd></dt>
+<dd><p>Path to the noise directory. Default: noise</p>
+</dd>
+<dt><kbd><span class="option">--custom-dataset <var>PATH</var></span></kbd></dt>
+<dd><p>Name of a custom dataset. Default: None</p>
+</dd>
+<dt><kbd><span class="option">--help</span></kbd></dt>
+<dd><p>Show this message and exit.</p>
+</dd>
+</dl>
+</dd>
+<dt>Commands:</dt><dd><ul class="simple">
+<li><p>align              align [OPTIONS] DATASET</p></li>
+<li><p>augment            augment [OPTIONS] DATASET</p></li>
+<li><p>datasplit          datasplit [OPTIONS] DATASET</p></li>
+<li><p>download-dataset   download_dataset DATASET</p></li>
+<li><p>download-noise     download_noise NOISE_PACK</p></li>
+<li><p>finetune           finetune [OPTIONS] DATASET MODEL_NAME</p></li>
+<li><p>hubert-preprocess  hubert_preprocess [OPTIONS] DATASET</p></li>
+<li><p>merge-datasets     merge_datasets [OPTIONS] DATASET, …</p></li>
+<li><p>pretrain           pretrain MODEL</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="module-rifs.fairseq">
+<span id="rifs-fairseq-module"></span><h2>rifs.fairseq module<a class="headerlink" href="#module-rifs.fairseq" title="Permalink to this heading"></a></h2>
+<p>Interface for fairseq pre-training.
+Contains the commands found fairseq/examples/…</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.fairseq.check_fairseq_config">
+<span class="sig-prename descclassname"><span class="pre">rifs.fairseq.</span></span><span class="sig-name descname"><span class="pre">check_fairseq_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.fairseq.check_fairseq_config" title="Permalink to this definition"></a></dt>
+<dd><p>Checks for the existence of the fairseq config directory.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.fairseq.fairseq_constructor">
+<span class="sig-prename descclassname"><span class="pre">rifs.fairseq.</span></span><span class="sig-name descname"><span class="pre">fairseq_constructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#rifs.fairseq.fairseq_constructor" title="Permalink to this definition"></a></dt>
+<dd><p>Creates the fairseq pre-training command.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>fairseq_path: str</dt><dd><p>Path to fairseq directory.</p>
+</dd>
+<dt>model_dict: dict</dt><dd><p>Dictionary of arguments to pass to fairseq pre-training.</p>
+</dd>
+<dt>ctx: dict</dt><dd><p>Dictionary of rifs context arguments.</p>
+</dd>
+<dt>manifest_source: str</dt><dd><p>Path to source manifest folder.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<p>str</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.fairseq.flatten">
+<span class="sig-prename descclassname"><span class="pre">rifs.fairseq.</span></span><span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.fairseq.flatten" title="Permalink to this definition"></a></dt>
+<dd><p>Flattens a dictionary.</p>
+<section id="id1">
+<h3>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>d: dict</dt><dd><p>Dictionary to flatten.</p>
+</dd>
+<dt>parent_key: str</dt><dd><p>Parent key.</p>
+</dd>
+<dt>sep: str</dt><dd><p>Separator.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>dict</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.fairseq.run_fairseq_pretrain">
+<span class="sig-prename descclassname"><span class="pre">rifs.fairseq.</span></span><span class="sig-name descname"><span class="pre">run_fairseq_pretrain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.fairseq.run_fairseq_pretrain" title="Permalink to this definition"></a></dt>
+<dd><p>Run fairseq pre-training.</p>
+<section id="id3">
+<h3>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>fairseq_path: str</dt><dd><p>Path to fairseq directory.</p>
+</dd>
+<dt>model_dict: dict</dt><dd><p>Dictionary of arguments to pass to fairseq pre-training.</p>
+</dd>
+<dt>ctx: dict</dt><dd><p>Dictionary of rifs context arguments.</p>
+</dd>
+<dt>manifest_source: str</dt><dd><p>Path to source manifest folder.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<p>None</p>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-rifs.hubert">
+<span id="rifs-hubert-module"></span><h2>rifs.hubert module<a class="headerlink" href="#module-rifs.hubert" title="Permalink to this heading"></a></h2>
+<p>Preprocessing steps for the Hubert model as outlined in the fairseq Hubert example</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert.create_tsv">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert.</span></span><span class="sig-name descname"><span class="pre">create_tsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_percent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'wav'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert.create_tsv" title="Permalink to this definition"></a></dt>
+<dd><p>Create file lists for training and validation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_dir</strong> (<em>str</em><em> or </em><em>Path</em>) – The directory of the dataset.</p></li>
+<li><p><strong>out_dir</strong> (<em>str</em><em> or </em><em>Path</em>) – The directory to store the file lists.</p></li>
+<li><p><strong>valid_percent</strong> (<em>float</em><em>, </em><em>optional</em>) – The percentage of data for validation. (Default: 0.01)</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – The seed for randomly selecting the validation files.</p></li>
+<li><p><strong>extension</strong> (<em>str</em><em>, </em><em>optional</em>) – The extension of audio files. (Default: <code class="docutils literal notranslate"><span class="pre">flac</span></code>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert.fairseq_hubert_preprocess">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert.</span></span><span class="sig-name descname"><span class="pre">fairseq_hubert_preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert.fairseq_hubert_preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>Run the preprocessing steps as outlined in the fairseq Hubert example:
+<a class="reference external" href="https://github.com/facebookresearch/fairseq/tree/main/examples/hubert/simple_kmeans">https://github.com/facebookresearch/fairseq/tree/main/examples/hubert/simple_kmeans</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<em>dict</em>) – The context dictionary.</p></li>
+<li><p><strong>fairseq_path</strong> (<em>str</em>) – The path to the fairseq repository.</p></li>
+<li><p><strong>dataset</strong> (<em>str</em>) – The name of the dataset to preprocess.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert.hubert_preprocess_1st">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert.</span></span><span class="sig-name descname"><span class="pre">hubert_preprocess_1st</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fairseq_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert.hubert_preprocess_1st" title="Permalink to this definition"></a></dt>
+<dd><p>python preprocess.py –root-dir /home/datasets –feat-type mfcc –exp-dir ./exp –num-cluster 100</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<em>dict</em>) – The context dictionary.</p></li>
+<li><p><strong>fairseq_path</strong> (<em>str</em>) – The path to the fairseq repository.</p></li>
+<li><p><strong>dataset</strong> (<em>str</em>) – The name of the dataset to preprocess.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert.hubert_preprocess_2nd">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert.</span></span><span class="sig-name descname"><span class="pre">hubert_preprocess_2nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert.hubert_preprocess_2nd" title="Permalink to this definition"></a></dt>
+<dd><p>To be implemented.</p>
+</dd></dl>
+
+</section>
+<section id="module-rifs.utils">
+<span id="rifs-utils-module"></span><h2>rifs.utils module<a class="headerlink" href="#module-rifs.utils" title="Permalink to this heading"></a></h2>
+<p>Utils</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.utils.is_package_installed">
+<span class="sig-prename descclassname"><span class="pre">rifs.utils.</span></span><span class="sig-name descname"><span class="pre">is_package_installed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">package</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.utils.is_package_installed" title="Permalink to this definition"></a></dt>
+<dd><p>Utility checking whether a Python package is installed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>package</strong> (<em>str</em>) – Name of the package to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the package is installed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../datasets.html" class="btn btn-neutral float-left" title="The datasets available in rifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rifsalignment.html" class="btn btn-neutral float-right" title="rifsalignment package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

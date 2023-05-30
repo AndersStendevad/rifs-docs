@@ -1,0 +1,74 @@
+rifstrain package
+=================
+
+.. automodule:: rifstrain
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+rifstrain.callbacks module
+--------------------------
+
+.. automodule:: rifstrain.callbacks
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.compute\_metrics module
+---------------------------------
+
+.. automodule:: rifstrain.compute_metrics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.datasets module
+-------------------------
+
+.. automodule:: rifstrain.datasets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.evaluate module
+-------------------------
+
+.. automodule:: rifstrain.evaluate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.finetune module
+-------------------------
+
+.. automodule:: rifstrain.finetune
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.settings module
+-------------------------
+
+.. automodule:: rifstrain.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.utils module
+----------------------
+
+.. automodule:: rifstrain.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifstrain.vocab module
+----------------------
+
+.. automodule:: rifstrain.vocab
+   :members:
+   :undoc-members:
+   :show-inheritance:

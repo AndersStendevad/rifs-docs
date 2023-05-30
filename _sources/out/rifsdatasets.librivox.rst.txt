@@ -1,0 +1,7 @@
+rifsdatasets.librivox module
+============================
+
+.. automodule:: rifsdatasets.librivox
+   :members:
+   :undoc-members:
+   :show-inheritance:

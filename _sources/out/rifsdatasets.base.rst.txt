@@ -1,0 +1,7 @@
+rifsdatasets.base module
+========================
+
+.. automodule:: rifsdatasets.base
+   :members:
+   :undoc-members:
+   :show-inheritance:

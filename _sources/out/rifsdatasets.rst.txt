@@ -1,0 +1,106 @@
+rifsdatasets package
+====================
+
+.. automodule:: rifsdatasets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+rifsdatasets.base module
+------------------------
+
+.. automodule:: rifsdatasets.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.commonvoicedansk module
+------------------------------------
+
+.. automodule:: rifsdatasets.commonvoicedansk
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.danpass module
+---------------------------
+
+.. automodule:: rifsdatasets.danpass
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.dansketaler module
+-------------------------------
+
+.. automodule:: rifsdatasets.dansketaler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.den2radio module
+-----------------------------
+
+.. automodule:: rifsdatasets.den2radio
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.forskerzonen module
+--------------------------------
+
+.. automodule:: rifsdatasets.forskerzonen
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.freesound module
+-----------------------------
+
+.. automodule:: rifsdatasets.freesound
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.librivox module
+----------------------------
+
+.. automodule:: rifsdatasets.librivox
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.merge\_rifsdatasets module
+---------------------------------------
+
+.. automodule:: rifsdatasets.merge_rifsdatasets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.nstdanishspråkbanken module
+----------------------------------------
+
+.. automodule:: rifsdatasets.nstdanishspråkbanken
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.split\_dataset module
+----------------------------------
+
+.. automodule:: rifsdatasets.split_dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.utils module
+-------------------------
+
+.. automodule:: rifsdatasets.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

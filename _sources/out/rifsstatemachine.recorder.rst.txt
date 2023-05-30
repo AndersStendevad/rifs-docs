@@ -1,0 +1,7 @@
+rifsstatemachine.recorder module
+================================
+
+.. automodule:: rifsstatemachine.recorder
+   :members:
+   :undoc-members:
+   :show-inheritance:

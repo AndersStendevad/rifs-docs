@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The datasets available in rifs &mdash; Home Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="rifs package" href="out/rifs.html" />
+    <link rel="prev" title="The CLI of the package" href="click.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Home
+              <img src="_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="click.html">The CLI of the package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The datasets available in rifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#librivoxdansk">LibriVoxDansk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intended-use">Intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#weirdspace-digital-library">WeirdSpace Digital Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#public-domain">Public domain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#den2radio">Den2Radio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intended-use">Intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eda">EDA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#forskerzonen">Forskerzonen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intended-use">Intended use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#danpass">DanPASS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intended-use">Intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preparing-the-data">Preparing the data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#filesturcture">1. Filesturcture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-text-cleaning-py">2. run text_cleaning.py</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#citation">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#nstdanishsprakbanken">NSTDanishSpråkbanken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intended-use">Intended use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commonvoicedansk">CommonVoiceDansk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intended-use">Intended use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dansketaler">DanskeTaler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsstatemachine.html">rifsstatemachine package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifstrain.html">rifstrain package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Home</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The datasets available in rifs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/datasets.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-datasets-available-in-rifs">
+<h1>The datasets available in rifs<a class="headerlink" href="#the-datasets-available-in-rifs" title="Permalink to this heading"></a></h1>
+<section id="librivoxdansk">
+<h2>LibriVoxDansk<a class="headerlink" href="#librivoxdansk" title="Permalink to this heading"></a></h2>
+<p>This is a toy dataset for Danish ASR. This dataset consists of audio recordings
+from <a class="reference external" href="https://librivox.org/">LibriVox</a> with text from <a class="reference external" href="https://weirdspace.dk/">WeirdSpace Digital
+Library</a>. All sound files and text files are in the
+public domain. As such there is no license with this dataset</p>
+<section id="intended-use">
+<h3>Intended use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h3>
+<p>This dataset consists of danish fairy tales. It is unlikely that this dataset can
+be used for training. Though we consider it a good dataset for both developing
+methods, but also to test ASR systems.</p>
+</section>
+<section id="weirdspace-digital-library">
+<h3>WeirdSpace Digital Library<a class="headerlink" href="#weirdspace-digital-library" title="Permalink to this heading"></a></h3>
+<p>All text material is from <a class="reference external" href="https://weirdspace.dk/">WeirdSpace Digital
+Library</a>. On the site they declare the following:</p>
+<p><em>Public domain historier som pt. er tilgængelige. Vær venligst opmærksom på, at
+historierne ikke nødvendigvis er public domain i alle lande.</em>
+<a class="reference external" href="https://weirdspace.info/DanskeTekster/">link</a> Last visited 22. feb 2023</p>
+</section>
+<section id="public-domain">
+<h3>Public domain<a class="headerlink" href="#public-domain" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="http://creativecommons.org/publicdomain/zero/1.0/"><img alt="CC0" src="http://i.creativecommons.org/p/zero/1.0/88x31.png" /></a>
+To the extent possible under law, <a class="reference external" href="https://www.linkedin.com/in/anders-stendevad-712814141/">Anders
+Stendevad</a> has waived
+all copyright and related or neighboring rights to LibriVoxDansk. This work is
+published from: Danmark.</p>
+</section>
+</section>
+<section id="den2radio">
+<h2>Den2Radio<a class="headerlink" href="#den2radio" title="Permalink to this heading"></a></h2>
+<p>Den2Radio is a Danish radio station that makes none commercial radio. It is
+driven by volunteers, and its radio programs are made my hobbyists. Some have
+worked in Broadcasting before. Others join to have their own radio program.
+This dataset is not public and therefore you may not use it for anything if you
+get access. All rights are reserved for Den2Radio and its organization.</p>
+<section id="intended-use">
+<h3>Intended use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h3>
+<p>We expect this dataset to be used as a pre-traing corpus for Danish ASR.
+If the dataset gets labeled, then it is likely that it will be useful for
+fine-tuning as well.</p>
+</section>
+<section id="eda">
+<h3>EDA<a class="headerlink" href="#eda" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Themes</p></th>
+<th class="head text-right"><p>Count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Arkiv</p></td>
+<td class="text-right"><p>52</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Klassisk musik</p></td>
+<td class="text-right"><p>172</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Kultur</p></td>
+<td class="text-right"><p>2277</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Musik</p></td>
+<td class="text-right"><p>338</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Natur</p></td>
+<td class="text-right"><p>111</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Politik</p></td>
+<td class="text-right"><p>185</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Samfund</p></td>
+<td class="text-right"><p>1934</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Videnskab og Filosofi</p></td>
+<td class="text-right"><p>219</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Year</p></th>
+<th class="head text-right"><p>Count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>2009</p></td>
+<td class="text-right"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2011</p></td>
+<td class="text-right"><p>22</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2012</p></td>
+<td class="text-right"><p>214</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2013</p></td>
+<td class="text-right"><p>149</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2014</p></td>
+<td class="text-right"><p>536</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2015</p></td>
+<td class="text-right"><p>479</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2016</p></td>
+<td class="text-right"><p>549</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2017</p></td>
+<td class="text-right"><p>666</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2018</p></td>
+<td class="text-right"><p>520</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2019</p></td>
+<td class="text-right"><p>560</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2020</p></td>
+<td class="text-right"><p>529</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2021</p></td>
+<td class="text-right"><p>570</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2022</p></td>
+<td class="text-right"><p>398</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2023</p></td>
+<td class="text-right"><p>95</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="forskerzonen">
+<h2>Forskerzonen<a class="headerlink" href="#forskerzonen" title="Permalink to this heading"></a></h2>
+<p>This is a Danish ASR dataset that is not public. We have granted permission to
+use the speech and text data from Nana Elving Hansen at Videnskab.dk and the
+speaker of the dataset Lærke Sivkjær.</p>
+<p>The data consists of articles made by researchers from Danish universities.
+There are 10 articles with different topics. The articles are read aloud by
+Lærke Sivkjær. The data is not aligned.</p>
+<section id="intended-use">
+<h3>Intended use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h3>
+<p>We expect this dataset to be used as an evaluation dataset.</p>
+</section>
+</section>
+<section id="danpass">
+<h2>DanPASS<a class="headerlink" href="#danpass" title="Permalink to this heading"></a></h2>
+<p>This is not the DanPASS dataset made by <a class="reference external" href="https://danpass.hum.ku.dk/">Nina
+Grønnum</a>. Instead this is an adapter that can make
+the rifs-CLI work with the data without fuss. If you wish to use this dataset, then you first need
+to go to <a class="reference external" href="https://danpass.hum.ku.dk/">danpass.hum.ku.dk</a>. Here you will need to
+make sure you understand what kind of data this is. Its limitations and bias.</p>
+<p>If you decide that this dataset fits you purpose, then feel free to ask <a class="reference external" href="https://danpass.hum.ku.dk/">Nina
+Grønnum</a> for access.</p>
+<section id="intended-use">
+<h3>Intended use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h3>
+<p>We see this dataset as a small dataset for testing and maybe small scale training.</p>
+</section>
+<section id="preparing-the-data">
+<h3>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this heading"></a></h3>
+<p>First you need to get access and download the files. These need to be unzip’ed.
+Because the original data comes in a format that is not ready for training you have to go through some steps.</p>
+<section id="filesturcture">
+<h4>1. Filesturcture<a class="headerlink" href="#filesturcture" title="Permalink to this heading"></a></h4>
+<p>You have to make sure you extract the files like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+├── all.csv
+├── audio
+│   ├── dialogues_mono_soundfiles
+│   │   └── *.wav
+│   └── monologues
+│       └── *.wav
+├── .gitignore
+├── README.md                                                                                                                                 ├── text
+│   ├── dialogues_continuous.txt
+│   ├── dialogues_mono_soundfiles
+│   │   └── (Empty for now)
+│   ├── monologues_continuous.txt
+│   └── monologues
+│       └── (Empty for now)
+└── text_cleaning.py
+
+</pre></div>
+</div>
+</section>
+<section id="run-text-cleaning-py">
+<h4>2. run text_cleaning.py<a class="headerlink" href="#run-text-cleaning-py" title="Permalink to this heading"></a></h4>
+<p>dialogues_continuous.txt and monologues_continuous.txt contains the text
+found in the PDF from the DanPASS page. We have made a script to turn this into
+text that can be aligned by the rifs-CLI.</p>
+</section>
+</section>
+<section id="citation">
+<h3>Citation<a class="headerlink" href="#citation" title="Permalink to this heading"></a></h3>
+<p>If you want to use the data remember to cite it in your paper.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">gronnum2006danpass</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">DanPASS</span><span class="o">-</span><span class="n">A</span> <span class="n">Danish</span> <span class="n">Phonetically</span> <span class="n">Annotated</span> <span class="n">Spontaneous</span> <span class="n">Speech</span> <span class="n">Corpus</span><span class="o">.</span><span class="p">},</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Gr</span><span class="p">{</span>\<span class="n">o</span><span class="p">}</span><span class="n">nnum</span><span class="p">,</span> <span class="n">Nina</span><span class="p">},</span>
+  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">LREC</span><span class="p">},</span>
+  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">1578</span><span class="o">--</span><span class="mi">1583</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2006</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nstdanishsprakbanken">
+<h2>NSTDanishSpråkbanken<a class="headerlink" href="#nstdanishsprakbanken" title="Permalink to this heading"></a></h2>
+<p>This database was created by <a class="reference external" href="https://www.nb.no/sprakbanken/en/resource-catalogue/oai-nb-no-sbr-55/">Nordic Language
+Technology</a>
+for the development of automatic speech recognition and dictation in Danish.</p>
+<p>This is not the NSTDanishSpråkbanken dataset. Rather it is an adapter to use
+the data in the rifs-CLI. To use this dataset you have to add all the .wav
+files to the dk folder.</p>
+<section id="intended-use">
+<h3>Intended use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h3>
+<p>This can be used for both training and testing.</p>
+</section>
+</section>
+<section id="commonvoicedansk">
+<h2>CommonVoiceDansk<a class="headerlink" href="#commonvoicedansk" title="Permalink to this heading"></a></h2>
+<p>This is an adapter that can make the rifs-CLI work with the CommonVoice data
+without fuss.</p>
+<p>Common Voice is a publicly available voice dataset, powered by the voices of
+volunteer contributors around the world. People who want to build voice
+applications can use the dataset to train machine learning models.</p>
+<p>At present, most voice datasets are owned by companies, which stifles
+innovation. Voice datasets also underrepresent: non-English speakers, people of
+colour, disabled people, women and LGBTQIA+ people. This means that
+voice-enabled technology doesn’t work at all for many languages, and where it
+does work, it may not perform equally well for everyone. We want to change that
+by mobilising people everywhere to share their voice.</p>
+<p>The danish subset of CommonVoice is 12 hours of annotated speech. This is what
+we call <a class="reference external" href="https://commonvoice.mozilla.org/da/datasets">CommonVoiceDansk</a></p>
+<section id="intended-use">
+<h3>Intended use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h3>
+<p>This can be used for both training and testing.</p>
+</section>
+</section>
+<section id="dansketaler">
+<h2>DanskeTaler<a class="headerlink" href="#dansketaler" title="Permalink to this heading"></a></h2>
+<p>This is a small dataset that is taken from Danske Taler. A danish initiative
+that has over 2500 Danish speeches on their site. We have tried to find a small
+subset for testing. The text is from Danske Taler. The audio is from various
+sources like Facebook and YouTube. All of these are public speeches.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="click.html" class="btn btn-neutral float-left" title="The CLI of the package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="out/rifs.html" class="btn btn-neutral float-right" title="rifs package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

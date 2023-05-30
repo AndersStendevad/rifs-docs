@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifsalignment &mdash; docs 0.0.1
+ documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="rifsalignment package" href="rifsalignment.html" />
+    <link rel="prev" title="rifs.hubert_utils package" href="../rifs/rifs.hubert_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifs/modules.html">rifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifs/rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifs/rifs.hubert_utils.html">rifs.hubert_utils package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifsalignment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsaugmentation/modules.html">rifsaugmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsaugmentation/rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsdatasets/modules.html">rifsdatasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsdatasets/rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsstatemachine/modules.html">rifsstatemachine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsstatemachine/rifsstatemachine.html">rifsstatemachine package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifsalignment</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/out/rifsalignment/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rifsalignment">
+<h1>rifsalignment<a class="headerlink" href="#rifsalignment" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#module-rifsalignment.algorithms">rifsalignment.algorithms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.CTC"><code class="docutils literal notranslate"><span class="pre">CTC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.CTC.align"><code class="docutils literal notranslate"><span class="pre">CTC.align()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.CTC.ctc_align_with_transcript"><code class="docutils literal notranslate"><span class="pre">CTC.ctc_align_with_transcript()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.StateMachineForLevenshtein"><code class="docutils literal notranslate"><span class="pre">StateMachineForLevenshtein</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.StateMachineForLevenshtein.align"><code class="docutils literal notranslate"><span class="pre">StateMachineForLevenshtein.align()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervised"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervised</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervised.align"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervised.align()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervisedNoModel"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervisedNoModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervisedNoModel.align"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervisedNoModel.align()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#module-rifsalignment.align_csv">rifsalignment.align_csv module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.align_csv.align_csv"><code class="docutils literal notranslate"><span class="pre">align_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.align_csv.save_alignments"><code class="docutils literal notranslate"><span class="pre">save_alignments()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#module-rifsalignment.base">rifsalignment.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.base.BaseAlignment"><code class="docutils literal notranslate"><span class="pre">BaseAlignment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.base.BaseAlignment.align"><code class="docutils literal notranslate"><span class="pre">BaseAlignment.align()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#module-rifsalignment.datamodels">rifsalignment.datamodels module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegment"><code class="docutils literal notranslate"><span class="pre">TimedSegment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegment.end"><code class="docutils literal notranslate"><span class="pre">TimedSegment.end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegment.start"><code class="docutils literal notranslate"><span class="pre">TimedSegment.start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegment.text"><code class="docutils literal notranslate"><span class="pre">TimedSegment.text</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.end"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.model_output"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.model_output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.start"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.text"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.text</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#module-rifsalignment.preprocess">rifsalignment.preprocess module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.preprocess.prepare_text"><code class="docutils literal notranslate"><span class="pre">prepare_text()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifsalignment.html#module-rifsalignment">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.TimedSegment"><code class="docutils literal notranslate"><span class="pre">TimedSegment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.TimedSegment.end"><code class="docutils literal notranslate"><span class="pre">TimedSegment.end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.TimedSegment.start"><code class="docutils literal notranslate"><span class="pre">TimedSegment.start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rifsalignment.html#rifsalignment.TimedSegment.text"><code class="docutils literal notranslate"><span class="pre">TimedSegment.text</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.align_csv"><code class="docutils literal notranslate"><span class="pre">align_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rifsalignment.html#rifsalignment.prepare_text"><code class="docutils literal notranslate"><span class="pre">prepare_text()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../rifs/rifs.hubert_utils.html" class="btn btn-neutral float-left" title="rifs.hubert_utils package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rifsalignment.html" class="btn btn-neutral float-right" title="rifsalignment package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

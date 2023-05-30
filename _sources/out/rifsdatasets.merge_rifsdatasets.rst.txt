@@ -1,0 +1,7 @@
+rifsdatasets.merge\_rifsdatasets module
+=======================================
+
+.. automodule:: rifsdatasets.merge_rifsdatasets
+   :members:
+   :undoc-members:
+   :show-inheritance:

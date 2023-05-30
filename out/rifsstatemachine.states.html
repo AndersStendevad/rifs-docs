@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifsstatemachine.states module &mdash; rifs is free speech Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            rifs is free speech
+              <img src="../_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets.html">The datasets available in rifs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">rifs is free speech</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifsstatemachine.states module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/rifsstatemachine.states.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rifsstatemachine.states">
+<span id="rifsstatemachine-states-module"></span><h1>rifsstatemachine.states module<a class="headerlink" href="#module-rifsstatemachine.states" title="Permalink to this heading"></a></h1>
+<p>States for the rifs state machine.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Aware">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">Aware</span></span><a class="headerlink" href="#rifsstatemachine.states.Aware" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The aware state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Aware.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.Aware.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="paramaters">
+<h2>Paramaters:<a class="headerlink" href="#paramaters" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Impatient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">Impatient</span></span><a class="headerlink" href="#rifsstatemachine.states.Impatient" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The impatient state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Impatient.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.Impatient.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id1">
+<h2>Paramaters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h2>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Listen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">Listen</span></span><a class="headerlink" href="#rifsstatemachine.states.Listen" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The listen state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Listen.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.Listen.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id3">
+<h2>Paramaters:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.MeasureBackgroundNoise">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">MeasureBackgroundNoise</span></span><a class="headerlink" href="#rifsstatemachine.states.MeasureBackgroundNoise" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The measure background noise state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.MeasureBackgroundNoise.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.MeasureBackgroundNoise.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id5">
+<h2>Paramaters:<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h2>Returns:<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Predict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">Predict</span></span><a class="headerlink" href="#rifsstatemachine.states.Predict" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The predict state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Predict.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.Predict.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id7">
+<h2>Paramaters:<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h2>Returns:<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.SkipMeasureBackgroundNoise">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">SkipMeasureBackgroundNoise</span></span><a class="headerlink" href="#rifsstatemachine.states.SkipMeasureBackgroundNoise" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The start state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.SkipMeasureBackgroundNoise.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.SkipMeasureBackgroundNoise.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id9">
+<h2>Paramaters:<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h2>Returns:<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Start">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">Start</span></span><a class="headerlink" href="#rifsstatemachine.states.Start" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The start state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Start.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.Start.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id11">
+<h2>Paramaters:<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h2>Returns:<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.State">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">State</span></span><a class="headerlink" href="#rifsstatemachine.states.State" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract class for the states of the recorder finite state machine</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rifsstatemachine.states.State.context">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">context</span></span><a class="headerlink" href="#rifsstatemachine.states.State.context" title="Permalink to this definition"></a></dt>
+<dd><p>The context of the state machine</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.State.process">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.State.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id13">
+<h2>Paramaters:<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id14">
+<h2>Returns:<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Wait">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsstatemachine.states.</span></span><span class="sig-name descname"><span class="pre">Wait</span></span><a class="headerlink" href="#rifsstatemachine.states.Wait" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsstatemachine.states.State" title="rifsstatemachine.states.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></p>
+<p>The wait state of the recorder finite state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsstatemachine.states.Wait.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifsstatemachine.states.Wait.process" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the audio sample</p>
+<section id="id15">
+<h2>Paramaters:<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>audio_sample: np.array</dt><dd><p>The audio sample to process</p>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h2>Returns:<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

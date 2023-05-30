@@ -1,0 +1,66 @@
+rifsstatemachine package
+========================
+
+.. automodule:: rifsstatemachine
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+rifsstatemachine.base module
+----------------------------
+
+.. automodule:: rifsstatemachine.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsstatemachine.base\_predictor module
+---------------------------------------
+
+.. automodule:: rifsstatemachine.base_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsstatemachine.functions module
+---------------------------------
+
+.. automodule:: rifsstatemachine.functions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsstatemachine.recorder module
+--------------------------------
+
+.. automodule:: rifsstatemachine.recorder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsstatemachine.splitter module
+--------------------------------
+
+.. automodule:: rifsstatemachine.splitter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsstatemachine.states module
+------------------------------
+
+.. automodule:: rifsstatemachine.states
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsstatemachine.utils module
+-----------------------------
+
+.. automodule:: rifsstatemachine.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,5 @@
+Results of doctest builder run on 2023-04-26 13:04:50
+=====================================================
+
+Document: out/rifsaugmentation
+------------------------------

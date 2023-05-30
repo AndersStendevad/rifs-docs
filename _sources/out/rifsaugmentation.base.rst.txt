@@ -1,0 +1,7 @@
+rifsaugmentation.base module
+============================
+
+.. automodule:: rifsaugmentation.base
+   :members:
+   :undoc-members:
+   :show-inheritance:

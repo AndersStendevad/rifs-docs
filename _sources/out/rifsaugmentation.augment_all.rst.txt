@@ -1,0 +1,7 @@
+rifsaugmentation.augment\_all module
+====================================
+
+.. automodule:: rifsaugmentation.augment_all
+   :members:
+   :undoc-members:
+   :show-inheritance:

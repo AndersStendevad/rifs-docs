@@ -1,0 +1,7 @@
+rifsalignment.algorithms module
+===============================
+
+.. automodule:: rifsalignment.algorithms
+   :members:
+   :undoc-members:
+   :show-inheritance:

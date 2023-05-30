@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifsdatasets package &mdash; Home Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rifsstatemachine package" href="rifsstatemachine.html" />
+    <link rel="prev" title="rifsaugmentation package" href="rifsaugmentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Home
+              <img src="../_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets.html">The datasets available in rifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifsdatasets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets.merge_rifsdatasets"><code class="docutils literal notranslate"><span class="pre">merge_rifsdatasets()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.base">rifsdatasets.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.base.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.base.Base.download"><code class="docutils literal notranslate"><span class="pre">Base.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-commonvoicedansk-module">rifsdatasets.commonvoicedansk module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-danpass-module">rifsdatasets.danpass module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-dansketaler-module">rifsdatasets.dansketaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.den2radio">rifsdatasets.den2radio module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.den2radio.Den2Radio"><code class="docutils literal notranslate"><span class="pre">Den2Radio</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.den2radio.Den2Radio.download"><code class="docutils literal notranslate"><span class="pre">Den2Radio.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.forskerzonen">rifsdatasets.forskerzonen module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.forskerzonen.Forskerzonen"><code class="docutils literal notranslate"><span class="pre">Forskerzonen</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.forskerzonen.Forskerzonen.download"><code class="docutils literal notranslate"><span class="pre">Forskerzonen.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-freesound-module">rifsdatasets.freesound module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.librivox">rifsdatasets.librivox module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.librivox.LibriVoxDansk"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.librivox.LibriVoxDansk.download"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.merge_rifsdatasets">rifsdatasets.merge_rifsdatasets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.merge_rifsdatasets.merge_rifsdatasets"><code class="docutils literal notranslate"><span class="pre">merge_rifsdatasets()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-nstdanishsprakbanken-module">rifsdatasets.nstdanishspråkbanken module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.split_dataset">rifsdatasets.split_dataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#split-dataset">Split dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.split_dataset.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.utils">rifsdatasets.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.utils.CloneProgress"><code class="docutils literal notranslate"><span class="pre">CloneProgress</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.utils.CloneProgress.error_lines"><code class="docutils literal notranslate"><span class="pre">CloneProgress.error_lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.utils.CloneProgress.other_lines"><code class="docutils literal notranslate"><span class="pre">CloneProgress.other_lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.utils.CloneProgress.update"><code class="docutils literal notranslate"><span class="pre">CloneProgress.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.utils.convert_mp3_to_wav"><code class="docutils literal notranslate"><span class="pre">convert_mp3_to_wav()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rifsstatemachine.html">rifsstatemachine package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifstrain.html">rifstrain package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Home</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifsdatasets package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/rifsdatasets.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rifsdatasets">
+<span id="rifsdatasets-package"></span><h1>rifsdatasets package<a class="headerlink" href="#module-rifsdatasets" title="Permalink to this heading"></a></h1>
+<p>Package for downloading and loading the rifs datasets</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsdatasets.merge_rifsdatasets">
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.</span></span><span class="sig-name descname"><span class="pre">merge_rifsdatasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trg_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specify_dirs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.merge_rifsdatasets" title="Permalink to this definition"></a></dt>
+<dd><p>Merge two or more datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src_dataset</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of datasets to merge. Should be fully qualified paths.</p></li>
+<li><p><strong>trg_dataset</strong> (<em>str</em>) – Path to new dataset to merge. Should be fully qualified path.</p></li>
+<li><p><strong>specify_dirs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of directories to merge. If None, all directories will be merged. Optional.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsdatasets.split_dataset">
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_test_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.split_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Split dataset into train, validation and test sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_path</strong> (<em>str</em>) – Path to dataset.</p></li>
+<li><p><strong>split_method</strong> (<em>str</em>) – Method to split dataset. Options are at the moment only: ‘random’.
+Will not overlap between original long audio files.
+So either a wav file is in train, validation or test set.</p></li>
+<li><p><strong>split_ratio</strong> (<em>float</em>) – Ratio to split dataset into train and validation / test sets.</p></li>
+<li><p><strong>split_test_ratio</strong> (<em>float</em>) – Ratio to split between validation and test set. default is 0.5.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print progress.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – disables output.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Seed for random number generator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifsdatasets.base">
+<span id="rifsdatasets-base-module"></span><h2>rifsdatasets.base module<a class="headerlink" href="#module-rifsdatasets.base" title="Permalink to this heading"></a></h2>
+<p>Base class for all datasets.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.base.Base">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.base.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><a class="headerlink" href="#rifsdatasets.base.Base" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Base class for all datasets.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.base.Base.download">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.base.Base.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="rifsdatasets-commonvoicedansk-module">
+<h2>rifsdatasets.commonvoicedansk module<a class="headerlink" href="#rifsdatasets-commonvoicedansk-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="rifsdatasets-danpass-module">
+<h2>rifsdatasets.danpass module<a class="headerlink" href="#rifsdatasets-danpass-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="rifsdatasets-dansketaler-module">
+<h2>rifsdatasets.dansketaler module<a class="headerlink" href="#rifsdatasets-dansketaler-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifsdatasets.den2radio">
+<span id="rifsdatasets-den2radio-module"></span><h2>rifsdatasets.den2radio module<a class="headerlink" href="#module-rifsdatasets.den2radio" title="Permalink to this heading"></a></h2>
+<p>Den2Radio is a Danish radio station that makes none commercial radio. It is
+driven by volunteers, and its radio programs are made my hobbyists. Some have
+worked in Broadcasting before. Others join to have their own radio program.
+This dataset is not public and therefore you may not use it for anything if you
+get access. All rights are reserved for Den2Radio and its organization.</p>
+<p>5288 episodes
+268 series
+47 producers
+8 themes</p>
+<p>5328 downloadable episodes
+622 not apart of a series</p>
+<p>Series description is avg 691.3047619047619 chars long if NaN is dropped for episodes with a series.
+Episode description is avg 1016.6026006977481 chars long if Nan is dropped for all episodes.</p>
+<p>Themes:
+Arkiv                      52
+Klassisk musik            172
+Kultur                   2277
+Musik                     338
+Natur                     111
+Politik                   185
+Samfund                  1934
+Videnskab og Filosofi     219</p>
+<p>year
+2009      1
+2011     22
+2012    214
+2013    149
+2014    536
+2015    479
+2016    549
+2017    666
+2018    520
+2019    560
+2020    529
+2021    570
+2022    398
+2023     95</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.den2radio.Den2Radio">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.den2radio.</span></span><span class="sig-name descname"><span class="pre">Den2Radio</span></span><a class="headerlink" href="#rifsdatasets.den2radio.Den2Radio" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for Den2Radio dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.den2radio.Den2Radio.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.den2radio.Den2Radio.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rifsdatasets.forskerzonen">
+<span id="rifsdatasets-forskerzonen-module"></span><h2>rifsdatasets.forskerzonen module<a class="headerlink" href="#module-rifsdatasets.forskerzonen" title="Permalink to this heading"></a></h2>
+<p>This module contains the Forskerzonen dataset.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.forskerzonen.Forskerzonen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.forskerzonen.</span></span><span class="sig-name descname"><span class="pre">Forskerzonen</span></span><a class="headerlink" href="#rifsdatasets.forskerzonen.Forskerzonen" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the Forskerzonen dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.forskerzonen.Forskerzonen.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.forskerzonen.Forskerzonen.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="rifsdatasets-freesound-module">
+<h2>rifsdatasets.freesound module<a class="headerlink" href="#rifsdatasets-freesound-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifsdatasets.librivox">
+<span id="rifsdatasets-librivox-module"></span><h2>rifsdatasets.librivox module<a class="headerlink" href="#module-rifsdatasets.librivox" title="Permalink to this heading"></a></h2>
+<p>This module contains the LibriVoxDansk dataset.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.librivox.LibriVoxDansk">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.librivox.</span></span><span class="sig-name descname"><span class="pre">LibriVoxDansk</span></span><a class="headerlink" href="#rifsdatasets.librivox.LibriVoxDansk" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the LibriVoxDansk dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.librivox.LibriVoxDansk.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.librivox.LibriVoxDansk.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rifsdatasets.merge_rifsdatasets">
+<span id="rifsdatasets-merge-rifsdatasets-module"></span><h2>rifsdatasets.merge_rifsdatasets module<a class="headerlink" href="#module-rifsdatasets.merge_rifsdatasets" title="Permalink to this heading"></a></h2>
+<p>This module contains the function to merge two datasets.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsdatasets.merge_rifsdatasets.merge_rifsdatasets">
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.merge_rifsdatasets.</span></span><span class="sig-name descname"><span class="pre">merge_rifsdatasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trg_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specify_dirs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.merge_rifsdatasets.merge_rifsdatasets" title="Permalink to this definition"></a></dt>
+<dd><p>Merge two or more datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src_dataset</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of datasets to merge. Should be fully qualified paths.</p></li>
+<li><p><strong>trg_dataset</strong> (<em>str</em>) – Path to new dataset to merge. Should be fully qualified path.</p></li>
+<li><p><strong>specify_dirs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of directories to merge. If None, all directories will be merged. Optional.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="rifsdatasets-nstdanishsprakbanken-module">
+<h2>rifsdatasets.nstdanishspråkbanken module<a class="headerlink" href="#rifsdatasets-nstdanishsprakbanken-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifsdatasets.split_dataset">
+<span id="rifsdatasets-split-dataset-module"></span><h2>rifsdatasets.split_dataset module<a class="headerlink" href="#module-rifsdatasets.split_dataset" title="Permalink to this heading"></a></h2>
+<section id="split-dataset">
+<h3>Split dataset<a class="headerlink" href="#split-dataset" title="Permalink to this heading"></a></h3>
+<p>The module contains one function to split_dataset into train, validation and
+test sets. Used by the rifs CLI. The functionality is used to combine segments
+of alignments into one.</p>
+<p>The module contains the following function:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>split_dataset: Split dataset into train, validation and test sets.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsdatasets.split_dataset.split_dataset">
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.split_dataset.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_test_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.split_dataset.split_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Split dataset into train, validation and test sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_path</strong> (<em>str</em>) – Path to dataset.</p></li>
+<li><p><strong>split_method</strong> (<em>str</em>) – Method to split dataset. Options are at the moment only: ‘random’.
+Will not overlap between original long audio files.
+So either a wav file is in train, validation or test set.</p></li>
+<li><p><strong>split_ratio</strong> (<em>float</em>) – Ratio to split dataset into train and validation / test sets.</p></li>
+<li><p><strong>split_test_ratio</strong> (<em>float</em>) – Ratio to split between validation and test set. default is 0.5.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print progress.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – disables output.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Seed for random number generator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifsdatasets.utils">
+<span id="rifsdatasets-utils-module"></span><h2>rifsdatasets.utils module<a class="headerlink" href="#module-rifsdatasets.utils" title="Permalink to this heading"></a></h2>
+<p>utils for rifsdatasets</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.utils.CloneProgress">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.utils.</span></span><span class="sig-name descname"><span class="pre">CloneProgress</span></span><a class="headerlink" href="#rifsdatasets.utils.CloneProgress" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteProgress</span></code></p>
+<p>Progress bar for cloning a git repository.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rifsdatasets.utils.CloneProgress.error_lines">
+<span class="sig-name descname"><span class="pre">error_lines</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#rifsdatasets.utils.CloneProgress.error_lines" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rifsdatasets.utils.CloneProgress.other_lines">
+<span class="sig-name descname"><span class="pre">other_lines</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#rifsdatasets.utils.CloneProgress.other_lines" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.utils.CloneProgress.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cur_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.utils.CloneProgress.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update the progress bar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op_code</strong> (<em>int</em>) – Operation code.</p></li>
+<li><p><strong>cur_count</strong> (<em>int</em>) – Current count.</p></li>
+<li><p><strong>max_count</strong> (<em>int</em>) – Maximum count.</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – Message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifsdatasets.utils.convert_mp3_to_wav">
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.utils.</span></span><span class="sig-name descname"><span class="pre">convert_mp3_to_wav</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.utils.convert_mp3_to_wav" title="Permalink to this definition"></a></dt>
+<dd><p>Convert mp3 to wav.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<em>str</em>) – Path to source mp3 file with extension</p></li>
+<li><p><strong>dst</strong> (<em>str</em>) – Path to destination wav file with extension</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rifsaugmentation.html" class="btn btn-neutral float-left" title="rifsaugmentation package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rifsstatemachine.html" class="btn btn-neutral float-right" title="rifsstatemachine package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

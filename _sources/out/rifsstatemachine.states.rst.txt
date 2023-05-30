@@ -1,0 +1,7 @@
+rifsstatemachine.states module
+==============================
+
+.. automodule:: rifsstatemachine.states
+   :members:
+   :undoc-members:
+   :show-inheritance:

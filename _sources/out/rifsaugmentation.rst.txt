@@ -1,0 +1,42 @@
+rifsaugmentation package
+========================
+
+.. automodule:: rifsaugmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+rifsaugmentation.augment\_all module
+------------------------------------
+
+.. automodule:: rifsaugmentation.augment_all
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsaugmentation.augmentation module
+------------------------------------
+
+.. automodule:: rifsaugmentation.augmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsaugmentation.base module
+----------------------------
+
+.. automodule:: rifsaugmentation.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsaugmentation.utils module
+-----------------------------
+
+.. automodule:: rifsaugmentation.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

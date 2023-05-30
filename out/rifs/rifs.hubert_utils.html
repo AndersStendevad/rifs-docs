@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifs.hubert_utils package &mdash; docs 0.0.1
+ documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="rifsalignment package" href="../rifsalignment/rifsalignment.html" />
+    <link rel="prev" title="rifs package" href="rifs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="rifs.html">rifs package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="rifs.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">rifs.hubert_utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rifs.hubert_utils.common_utils">rifs.hubert_utils.common_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rifs.hubert_utils.feature_utils">rifs.hubert_utils.feature_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rifs.hubert_utils.kmeans">rifs.hubert_utils.kmeans module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rifs.hubert_utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#module-rifs.cli">rifs.cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#module-rifs.fairseq">rifs.fairseq module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#module-rifs.hubert">rifs.hubert module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#module-rifs.hubert_preprocess">rifs.hubert_preprocess module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#module-rifs.utils">rifs.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rifs.html#module-rifs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifs.hubert_utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert_utils.common_utils">rifs.hubert_utils.common_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.common_utils.create_tsv"><code class="docutils literal notranslate"><span class="pre">create_tsv()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert_utils.feature_utils">rifs.hubert_utils.feature_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.feature_utils.dump_features"><code class="docutils literal notranslate"><span class="pre">dump_features()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.feature_utils.extract_feature_hubert"><code class="docutils literal notranslate"><span class="pre">extract_feature_hubert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.feature_utils.extract_feature_mfcc"><code class="docutils literal notranslate"><span class="pre">extract_feature_mfcc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.feature_utils.get_shard_range"><code class="docutils literal notranslate"><span class="pre">get_shard_range()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert_utils.kmeans">rifs.hubert_utils.kmeans module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.kmeans.ApplyKmeans"><code class="docutils literal notranslate"><span class="pre">ApplyKmeans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.kmeans.get_km_label"><code class="docutils literal notranslate"><span class="pre">get_km_label()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.kmeans.learn_kmeans"><code class="docutils literal notranslate"><span class="pre">learn_kmeans()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs.hubert_utils.kmeans.load_feature"><code class="docutils literal notranslate"><span class="pre">load_feature()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifs.hubert_utils">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsalignment/rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsaugmentation/rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsdatasets/rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rifsstatemachine/rifsstatemachine.html">rifsstatemachine package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="rifs.html">rifs package</a></li>
+      <li class="breadcrumb-item active">rifs.hubert_utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/out/rifs/rifs.hubert_utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rifs-hubert-utils-package">
+<h1>rifs.hubert_utils package<a class="headerlink" href="#rifs-hubert-utils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifs.hubert_utils.common_utils">
+<span id="rifs-hubert-utils-common-utils-module"></span><h2>rifs.hubert_utils.common_utils module<a class="headerlink" href="#module-rifs.hubert_utils.common_utils" title="Permalink to this heading"></a></h2>
+<p>Data pre-processing: create tsv files for training (and valiation).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.common_utils.create_tsv">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.common_utils.</span></span><span class="sig-name descname"><span class="pre">create_tsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'hubert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_percent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'wav'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert_utils.common_utils.create_tsv" title="Permalink to this definition"></a></dt>
+<dd><p>Create file lists for training and validation.
+:param root_dir: The directory of the dataset.
+:type root_dir: str or Path
+:param out_dir: The directory to store the file lists.
+:type out_dir: str or Path
+:param dataset: The dataset to use.
+:type dataset: str, optional
+:param valid_percent: The percentage of data for validation. (Default: 0.01)
+:type valid_percent: float, optional
+:param seed: The seed for randomly selecting the validation files.
+:type seed: int
+:param extension: The extension of audio files. (Default: <code class="docutils literal notranslate"><span class="pre">flac</span></code>)
+:type extension: str, optional</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifs.hubert_utils.feature_utils">
+<span id="rifs-hubert-utils-feature-utils-module"></span><h2>rifs.hubert_utils.feature_utils module<a class="headerlink" href="#module-rifs.hubert_utils.feature_utils" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.feature_utils.dump_features">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.feature_utils.</span></span><span class="sig-name descname"><span class="pre">dump_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tsv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'mfcc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert_utils.feature_utils.dump_features" title="Permalink to this definition"></a></dt>
+<dd><p>Dump the feature tensors given a <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> file list. The feature and lengths tensors</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.feature_utils.extract_feature_hubert">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.feature_utils.</span></span><span class="sig-name descname"><span class="pre">extract_feature_hubert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#rifs.hubert_utils.feature_utils.extract_feature_hubert" title="Permalink to this definition"></a></dt>
+<dd><p>Extract HuBERT features for KMeans clustering and pseudo label prediction.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.feature_utils.extract_feature_mfcc">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.feature_utils.</span></span><span class="sig-name descname"><span class="pre">extract_feature_mfcc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#rifs.hubert_utils.feature_utils.extract_feature_mfcc" title="Permalink to this definition"></a></dt>
+<dd><p>Extract MFCC features for KMeans clustering and pseudo label prediction.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.feature_utils.get_shard_range">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.feature_utils.</span></span><span class="sig-name descname"><span class="pre">get_shard_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_lines</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifs.hubert_utils.feature_utils.get_shard_range" title="Permalink to this definition"></a></dt>
+<dd><p>Get the range of indices for the current rank in multi-processing.</p>
+</dd></dl>
+
+</section>
+<section id="module-rifs.hubert_utils.kmeans">
+<span id="rifs-hubert-utils-kmeans-module"></span><h2>rifs.hubert_utils.kmeans module<a class="headerlink" href="#module-rifs.hubert_utils.kmeans" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifs.hubert_utils.kmeans.ApplyKmeans">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.kmeans.</span></span><span class="sig-name descname"><span class="pre">ApplyKmeans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">km_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifs.hubert_utils.kmeans.ApplyKmeans" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.kmeans.get_km_label">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.kmeans.</span></span><span class="sig-name descname"><span class="pre">get_km_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">km_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert_utils.kmeans.get_km_label" title="Permalink to this definition"></a></dt>
+<dd><p>Predict the labels by the KMeans clustering model.
+:param feat_dir: The directory that stores the dumped features.
+:type feat_dir: Path
+:param km_dir: The directory that stores the KMeans model.
+:type km_dir: Path
+:param label_dir: The directory to save the predicted labels.
+:type label_dir: Path
+:param split: The split of data. Options: [<code class="docutils literal notranslate"><span class="pre">train</span></code>, <code class="docutils literal notranslate"><span class="pre">valid</span></code>].
+:type split: str
+:param num_rank: The number of ranks for multi-processing in feature extraction.
+:type num_rank: int
+:param device: The location to allocate for PyTorch Tensors.</p>
+<blockquote>
+<div><p>Options: [<code class="docutils literal notranslate"><span class="pre">torch.device('cpu')</span></code>, torch.device(‘cuda’)``].</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.kmeans.learn_kmeans">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.kmeans.</span></span><span class="sig-name descname"><span class="pre">learn_kmeans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">km_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'k-means++'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reassignment_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_no_improvement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifs.hubert_utils.kmeans.learn_kmeans" title="Permalink to this definition"></a></dt>
+<dd><p>Build and train the KMeans clustering model. The model is saved in “{km_dir}/model.pt”
+:param feat_dir: The directory that stores the feature files.
+:type feat_dir: Path
+:param split: The split of data. Options: [<code class="docutils literal notranslate"><span class="pre">train</span></code>, <code class="docutils literal notranslate"><span class="pre">valid</span></code>].
+:type split: str
+:param num_rank: The number of ranks for multi-processing in feature extraction.
+:type num_rank: int
+:param km_dir: The directory to store the KMeans clustering model.
+:type km_dir: Path
+:param n_clusters: The number of clusters.
+:type n_clusters: int
+:param percent: The percent of data for training k-means model.</p>
+<blockquote>
+<div><p>If negative, use all data for training. (Default: -1)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>init</strong> (<em>str</em><em>, </em><em>optional</em>) – Method for initialization. Options: [<code class="docutils literal notranslate"><span class="pre">k-means++</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code>].
+(Default: <code class="docutils literal notranslate"><span class="pre">k-means++</span></code>)</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of iterations over the complete dataset. (Default: 100)</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Batch size for training the KMeans clustering model. (Default: 10000)</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) – Control early stopping based on the relative center changes as measured by a smoothed,
+variance-normalized of the mean center squared position changes. (Default: 0.0)</p></li>
+<li><p><strong>n_init</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of random initializations that are tried. (Default: 20)</p></li>
+<li><p><strong>reassignment_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Control the fraction of the maximum number of counts for a center
+to be reassigned. A higher value means that low count centers are more easily reassigned. (Default: 0.0)</p></li>
+<li><p><strong>max_no_improvement</strong> (<em>int</em><em>, </em><em>optional</em>) – Control early stopping based on the consecutive number of mini batches
+that does not yield an improvement on the smoothed inertia. (Default: 100)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifs.hubert_utils.kmeans.load_feature">
+<span class="sig-prename descclassname"><span class="pre">rifs.hubert_utils.kmeans.</span></span><span class="sig-name descname"><span class="pre">load_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifs.hubert_utils.kmeans.load_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Loading features from pre-saved <cite>.pt</cite> files.
+:param feat_dir: The directory that stores the feature files.
+:type feat_dir: Path
+:param split: The split of data. Options: [<code class="docutils literal notranslate"><span class="pre">train</span></code>, <code class="docutils literal notranslate"><span class="pre">valid</span></code>].
+:type split: str
+:param num_rank: The number of ranks for multi-processing in feature extraction.
+:type num_rank: int
+:param percent: The percent of data for training k-means model. If negative, use all data for training.
+:type percent: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Tensor, Tensor)
+Tensor: The concatenated feature tensor of shape <cite>(frame, feature_dim)</cite>.
+Tensor: The lengths tensor of shape <cite>(num_utterance,)</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifs.hubert_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rifs.hubert_utils" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rifs.html" class="btn btn-neutral float-left" title="rifs package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../rifsalignment/rifsalignment.html" class="btn btn-neutral float-right" title="rifsalignment package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

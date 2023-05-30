@@ -1,0 +1,7 @@
+rifs.cli module
+===============
+
+.. automodule:: rifs.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:

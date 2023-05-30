@@ -1,0 +1,7 @@
+rifsalignment.base module
+=========================
+
+.. automodule:: rifsalignment.base
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to the documentation of rifs! &mdash; Home Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The CLI of the package" href="click.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Home
+              <img src="_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">The datasets available in rifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsstatemachine.html">rifsstatemachine package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifstrain.html">rifstrain package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Home</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to the documentation of rifs!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-the-documentation-of-rifs">
+<h1>Welcome to the documentation of rifs!<a class="headerlink" href="#welcome-to-the-documentation-of-rifs" title="Permalink to this heading"></a></h1>
+<p>This documentation is for all repositories in the rifs is free speech project.
+We have tried to make all components loosely coupled, which should make it
+easier to reuse code.</p>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
+<p>All code from this project is using the MIT license. Feel free to reuse the
+code for your own projects.</p>
+<p><a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+</section>
+<section id="cite">
+<h2>Cite<a class="headerlink" href="#cite" title="Permalink to this heading"></a></h2>
+<p>If you want to cite this project then you can</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span>
+    <span class="n">stendevad_joensen_2023</span><span class="p">,</span>
+    <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Rifs</span> <span class="ow">is</span> <span class="n">free</span> <span class="n">speech</span><span class="p">},</span>
+    <span class="n">publisher</span><span class="o">=</span><span class="p">{</span><span class="n">IT</span> <span class="n">University</span> <span class="n">of</span> <span class="n">Copenhagen</span><span class="p">},</span>
+    <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Stendevad</span><span class="p">,</span> <span class="n">Anders</span> <span class="ow">and</span> <span class="n">Joensen</span><span class="p">,</span> <span class="n">Emil</span> <span class="n">Anker</span><span class="p">},</span>
+    <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2023</span><span class="p">},</span>
+    <span class="n">month</span><span class="o">=</span><span class="p">{</span><span class="n">Jun</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="content">
+<h1>Content<a class="headerlink" href="#content" title="Permalink to this heading"></a></h1>
+</section>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="click.html">The CLI of the package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="click.html#rifs">rifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-align">align</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-augment">augment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-datasplit">datasplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-download-dataset">download-dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-download-noise">download-noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-finetune">finetune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-hubert-preprocess">hubert-preprocess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-merge-datasets">merge-datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-pretrain">pretrain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">The datasets available in rifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#librivoxdansk">LibriVoxDansk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#intended-use">Intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#weirdspace-digital-library">WeirdSpace Digital Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#public-domain">Public domain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#den2radio">Den2Radio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#intended-use">Intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#eda">EDA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#forskerzonen">Forskerzonen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#intended-use">Intended use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#danpass">DanPASS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#intended-use">Intended use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#preparing-the-data">Preparing the data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#filesturcture">1. Filesturcture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#run-text-cleaning-py">2. run text_cleaning.py</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#citation">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#nstdanishsprakbanken">NSTDanishSpråkbanken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#intended-use">Intended use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#commonvoicedansk">CommonVoiceDansk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#intended-use">Intended use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#dansketaler">DanskeTaler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifs.html">rifs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="out/rifs.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifs.html#module-rifs.cli">rifs.cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifs.html#module-rifs.fairseq">rifs.fairseq module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.fairseq.check_fairseq_config"><code class="docutils literal notranslate"><span class="pre">check_fairseq_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.fairseq.fairseq_constructor"><code class="docutils literal notranslate"><span class="pre">fairseq_constructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.fairseq.flatten"><code class="docutils literal notranslate"><span class="pre">flatten()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.fairseq.run_fairseq_pretrain"><code class="docutils literal notranslate"><span class="pre">run_fairseq_pretrain()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifs.html#module-rifs.hubert">rifs.hubert module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.hubert.create_tsv"><code class="docutils literal notranslate"><span class="pre">create_tsv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.hubert.fairseq_hubert_preprocess"><code class="docutils literal notranslate"><span class="pre">fairseq_hubert_preprocess()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.hubert.hubert_preprocess_1st"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_1st()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.hubert.hubert_preprocess_2nd"><code class="docutils literal notranslate"><span class="pre">hubert_preprocess_2nd()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifs.html#module-rifs.utils">rifs.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifs.html#rifs.utils.is_package_installed"><code class="docutils literal notranslate"><span class="pre">is_package_installed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsalignment.html">rifsalignment package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.TimedSegment"><code class="docutils literal notranslate"><span class="pre">TimedSegment</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.TimedSegment.end"><code class="docutils literal notranslate"><span class="pre">TimedSegment.end</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.TimedSegment.start"><code class="docutils literal notranslate"><span class="pre">TimedSegment.start</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.TimedSegment.text"><code class="docutils literal notranslate"><span class="pre">TimedSegment.text</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.align_csv"><code class="docutils literal notranslate"><span class="pre">align_csv()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.algorithms">rifsalignment.algorithms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.CTC"><code class="docutils literal notranslate"><span class="pre">CTC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.CTC.align"><code class="docutils literal notranslate"><span class="pre">CTC.align()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.CTC.ctc_align_with_transcript"><code class="docutils literal notranslate"><span class="pre">CTC.ctc_align_with_transcript()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.StateMachineForLevenshtein"><code class="docutils literal notranslate"><span class="pre">StateMachineForLevenshtein</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.StateMachineForLevenshtein.align"><code class="docutils literal notranslate"><span class="pre">StateMachineForLevenshtein.align()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervised"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervised</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervised.align"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervised.align()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervisedNoModel"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervisedNoModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.StateMachineUnsupervisedNoModel.align"><code class="docutils literal notranslate"><span class="pre">StateMachineUnsupervisedNoModel.align()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.align_csv">rifsalignment.align_csv module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.align_csv.align_csv"><code class="docutils literal notranslate"><span class="pre">align_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.align_csv.save_alignments"><code class="docutils literal notranslate"><span class="pre">save_alignments()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.base">rifsalignment.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.base.BaseAlignment"><code class="docutils literal notranslate"><span class="pre">BaseAlignment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.base.BaseAlignment.align"><code class="docutils literal notranslate"><span class="pre">BaseAlignment.align()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.datamodels">rifsalignment.datamodels module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegment"><code class="docutils literal notranslate"><span class="pre">TimedSegment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegment.end"><code class="docutils literal notranslate"><span class="pre">TimedSegment.end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegment.start"><code class="docutils literal notranslate"><span class="pre">TimedSegment.start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegment.text"><code class="docutils literal notranslate"><span class="pre">TimedSegment.text</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.end"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.model_output"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.model_output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.start"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.start</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.datamodels.TimedSegmentWithModelOutput.text"><code class="docutils literal notranslate"><span class="pre">TimedSegmentWithModelOutput.text</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment-experiment-module">rifsalignment.experiment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.preprocess">rifsalignment.preprocess module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.preprocess.prepare_text"><code class="docutils literal notranslate"><span class="pre">prepare_text()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsaugmentation.html">rifsaugmentation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#rifs-augmentation-library">Rifs Augmentation Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.augment_all"><code class="docutils literal notranslate"><span class="pre">augment_all()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#module-rifsaugmentation.augment_all">rifsaugmentation.augment_all module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.augment_all.augment_all"><code class="docutils literal notranslate"><span class="pre">augment_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#module-rifsaugmentation.augmentation">rifsaugmentation.augmentation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.augmentation.ModifySpeedAugmentation"><code class="docutils literal notranslate"><span class="pre">ModifySpeedAugmentation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.augmentation.NoiseAugmentation"><code class="docutils literal notranslate"><span class="pre">NoiseAugmentation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.augmentation.RoomSimulationAugmentation"><code class="docutils literal notranslate"><span class="pre">RoomSimulationAugmentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#module-rifsaugmentation.base">rifsaugmentation.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.base.BaseAugmentation"><code class="docutils literal notranslate"><span class="pre">BaseAugmentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsaugmentation.html#module-rifsaugmentation.utils">rifsaugmentation.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsaugmentation.html#rifsaugmentation.utils.load_wav_with_checks"><code class="docutils literal notranslate"><span class="pre">load_wav_with_checks()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsdatasets.html">rifsdatasets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.merge_rifsdatasets"><code class="docutils literal notranslate"><span class="pre">merge_rifsdatasets()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.base">rifsdatasets.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.base.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.base.Base.download"><code class="docutils literal notranslate"><span class="pre">Base.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-commonvoicedansk-module">rifsdatasets.commonvoicedansk module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-danpass-module">rifsdatasets.danpass module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-dansketaler-module">rifsdatasets.dansketaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.den2radio">rifsdatasets.den2radio module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.den2radio.Den2Radio"><code class="docutils literal notranslate"><span class="pre">Den2Radio</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.den2radio.Den2Radio.download"><code class="docutils literal notranslate"><span class="pre">Den2Radio.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.forskerzonen">rifsdatasets.forskerzonen module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.forskerzonen.Forskerzonen"><code class="docutils literal notranslate"><span class="pre">Forskerzonen</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.forskerzonen.Forskerzonen.download"><code class="docutils literal notranslate"><span class="pre">Forskerzonen.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-freesound-module">rifsdatasets.freesound module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.librivox">rifsdatasets.librivox module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.librivox.LibriVoxDansk"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.librivox.LibriVoxDansk.download"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.merge_rifsdatasets">rifsdatasets.merge_rifsdatasets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.merge_rifsdatasets.merge_rifsdatasets"><code class="docutils literal notranslate"><span class="pre">merge_rifsdatasets()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-nstdanishsprakbanken-module">rifsdatasets.nstdanishspråkbanken module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.split_dataset">rifsdatasets.split_dataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#split-dataset">Split dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.split_dataset.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.utils">rifsdatasets.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress"><code class="docutils literal notranslate"><span class="pre">CloneProgress</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress.error_lines"><code class="docutils literal notranslate"><span class="pre">CloneProgress.error_lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress.other_lines"><code class="docutils literal notranslate"><span class="pre">CloneProgress.other_lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress.update"><code class="docutils literal notranslate"><span class="pre">CloneProgress.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.utils.convert_mp3_to_wav"><code class="docutils literal notranslate"><span class="pre">convert_mp3_to_wav()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifsstatemachine.html">rifsstatemachine package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.base">rifsstatemachine.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine"><code class="docutils literal notranslate"><span class="pre">StateMachine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.check_for_speech"><code class="docutils literal notranslate"><span class="pre">StateMachine.check_for_speech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.halfway"><code class="docutils literal notranslate"><span class="pre">StateMachine.halfway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.listen_for_speech"><code class="docutils literal notranslate"><span class="pre">StateMachine.listen_for_speech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.predict"><code class="docutils literal notranslate"><span class="pre">StateMachine.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.process"><code class="docutils literal notranslate"><span class="pre">StateMachine.process()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.process_next_audio_sample"><code class="docutils literal notranslate"><span class="pre">StateMachine.process_next_audio_sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.progressbar"><code class="docutils literal notranslate"><span class="pre">StateMachine.progressbar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.put"><code class="docutils literal notranslate"><span class="pre">StateMachine.put()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.setState"><code class="docutils literal notranslate"><span class="pre">StateMachine.setState()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.setup"><code class="docutils literal notranslate"><span class="pre">StateMachine.setup()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.base_predictor">rifsstatemachine.base_predictor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base_predictor.BasePredictor"><code class="docutils literal notranslate"><span class="pre">BasePredictor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base_predictor.BasePredictor.predict"><code class="docutils literal notranslate"><span class="pre">BasePredictor.predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base_predictor.Predictor"><code class="docutils literal notranslate"><span class="pre">Predictor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.base_predictor.Predictor.predict"><code class="docutils literal notranslate"><span class="pre">Predictor.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.functions">rifsstatemachine.functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.functions.record_to_screen"><code class="docutils literal notranslate"><span class="pre">record_to_screen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.functions.wav_to_screen"><code class="docutils literal notranslate"><span class="pre">wav_to_screen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.functions.wav_to_utterances"><code class="docutils literal notranslate"><span class="pre">wav_to_utterances()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.recorder">rifsstatemachine.recorder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.recorder.Recorder"><code class="docutils literal notranslate"><span class="pre">Recorder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.recorder.Recorder.check_for_speech"><code class="docutils literal notranslate"><span class="pre">Recorder.check_for_speech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.recorder.Recorder.halfway"><code class="docutils literal notranslate"><span class="pre">Recorder.halfway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.recorder.Recorder.listen_for_speech"><code class="docutils literal notranslate"><span class="pre">Recorder.listen_for_speech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.recorder.Recorder.predict"><code class="docutils literal notranslate"><span class="pre">Recorder.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.splitter">rifsstatemachine.splitter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.splitter.Splitter"><code class="docutils literal notranslate"><span class="pre">Splitter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.splitter.Splitter.check_for_speech"><code class="docutils literal notranslate"><span class="pre">Splitter.check_for_speech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.splitter.Splitter.halfway"><code class="docutils literal notranslate"><span class="pre">Splitter.halfway()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.splitter.Splitter.listen_for_speech"><code class="docutils literal notranslate"><span class="pre">Splitter.listen_for_speech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.splitter.Splitter.predict"><code class="docutils literal notranslate"><span class="pre">Splitter.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.states">rifsstatemachine.states module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Aware"><code class="docutils literal notranslate"><span class="pre">Aware</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Aware.process"><code class="docutils literal notranslate"><span class="pre">Aware.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Impatient"><code class="docutils literal notranslate"><span class="pre">Impatient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Impatient.process"><code class="docutils literal notranslate"><span class="pre">Impatient.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Listen"><code class="docutils literal notranslate"><span class="pre">Listen</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Listen.process"><code class="docutils literal notranslate"><span class="pre">Listen.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.MeasureBackgroundNoise"><code class="docutils literal notranslate"><span class="pre">MeasureBackgroundNoise</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.MeasureBackgroundNoise.process"><code class="docutils literal notranslate"><span class="pre">MeasureBackgroundNoise.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Predict"><code class="docutils literal notranslate"><span class="pre">Predict</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Predict.process"><code class="docutils literal notranslate"><span class="pre">Predict.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.SkipMeasureBackgroundNoise"><code class="docutils literal notranslate"><span class="pre">SkipMeasureBackgroundNoise</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.SkipMeasureBackgroundNoise.process"><code class="docutils literal notranslate"><span class="pre">SkipMeasureBackgroundNoise.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Start"><code class="docutils literal notranslate"><span class="pre">Start</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Start.process"><code class="docutils literal notranslate"><span class="pre">Start.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.State"><code class="docutils literal notranslate"><span class="pre">State</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.State.context"><code class="docutils literal notranslate"><span class="pre">State.context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.State.process"><code class="docutils literal notranslate"><span class="pre">State.process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Wait"><code class="docutils literal notranslate"><span class="pre">Wait</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.states.Wait.process"><code class="docutils literal notranslate"><span class="pre">Wait.process()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsstatemachine.html#module-rifsstatemachine.utils">rifsstatemachine.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.utils.calculate_dB"><code class="docutils literal notranslate"><span class="pre">calculate_dB()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.utils.calculate_rms"><code class="docutils literal notranslate"><span class="pre">calculate_rms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsstatemachine.html#rifsstatemachine.utils.save_wav"><code class="docutils literal notranslate"><span class="pre">save_wav()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="out/rifstrain.html">rifstrain package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#rifstrain">rifstrain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#rifstrain.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#rifstrain.finetune"><code class="docutils literal notranslate"><span class="pre">finetune()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.callbacks">rifstrain.callbacks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#callbacks">Callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger"><code class="docutils literal notranslate"><span class="pre">CsvLogger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_init_end"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_init_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_step_begin"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_step_begin()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.Timekeeper"><code class="docutils literal notranslate"><span class="pre">Timekeeper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.Timekeeper.on_step_end"><code class="docutils literal notranslate"><span class="pre">Timekeeper.on_step_end()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.dumper"><code class="docutils literal notranslate"><span class="pre">dumper()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.compute_metrics">rifstrain.compute_metrics module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#compute-metrics">Compute metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.compute_metrics.compute_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.datasets">rifstrain.datasets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#datasets">Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.datasets.SpeechCollator"><code class="docutils literal notranslate"><span class="pre">SpeechCollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.datasets.SpeechDataset"><code class="docutils literal notranslate"><span class="pre">SpeechDataset</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.evaluate">rifstrain.evaluate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.evaluate.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.finetune">rifstrain.finetune module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#fine-tune">Fine tune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.finetune.finetune"><code class="docutils literal notranslate"><span class="pre">finetune()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.settings">rifstrain.settings module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings"><code class="docutils literal notranslate"><span class="pre">ModelSettings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings.attention_dropout"><code class="docutils literal notranslate"><span class="pre">ModelSettings.attention_dropout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings.feat_proj_dropout"><code class="docutils literal notranslate"><span class="pre">ModelSettings.feat_proj_dropout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings.hidden_dropout"><code class="docutils literal notranslate"><span class="pre">ModelSettings.hidden_dropout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings.layerdrop"><code class="docutils literal notranslate"><span class="pre">ModelSettings.layerdrop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings.mask_time_prob"><code class="docutils literal notranslate"><span class="pre">ModelSettings.mask_time_prob</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.ModelSettings.sampling_rate"><code class="docutils literal notranslate"><span class="pre">ModelSettings.sampling_rate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.TrainerSettings"><code class="docutils literal notranslate"><span class="pre">TrainerSettings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.TrainerSettings.batch_size"><code class="docutils literal notranslate"><span class="pre">TrainerSettings.batch_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.TrainerSettings.lr"><code class="docutils literal notranslate"><span class="pre">TrainerSettings.lr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.settings.TrainerSettings.token"><code class="docutils literal notranslate"><span class="pre">TrainerSettings.token</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.utils">rifstrain.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#utils">Utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.utils.PrepareDataset"><code class="docutils literal notranslate"><span class="pre">PrepareDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.utils.RemoveSpecialCharacters"><code class="docutils literal notranslate"><span class="pre">RemoveSpecialCharacters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.utils.ToTensor"><code class="docutils literal notranslate"><span class="pre">ToTensor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.vocab">rifstrain.vocab module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#vocab">Vocab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.vocab.get_vocab"><code class="docutils literal notranslate"><span class="pre">get_vocab()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.vocab.write_vocab"><code class="docutils literal notranslate"><span class="pre">write_vocab()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="click.html" class="btn btn-neutral float-right" title="The CLI of the package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

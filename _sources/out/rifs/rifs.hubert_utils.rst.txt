@@ -1,0 +1,37 @@
+rifs.hubert\_utils package
+==========================
+
+Submodules
+----------
+
+rifs.hubert\_utils.common\_utils module
+---------------------------------------
+
+.. automodule:: rifs.hubert_utils.common_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.hubert\_utils.feature\_utils module
+----------------------------------------
+
+.. automodule:: rifs.hubert_utils.feature_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.hubert\_utils.kmeans module
+--------------------------------
+
+.. automodule:: rifs.hubert_utils.kmeans
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: rifs.hubert_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

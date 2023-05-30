@@ -1,0 +1,45 @@
+rifsdatasets package
+====================
+
+Submodules
+----------
+
+rifsdatasets.base module
+------------------------
+
+.. automodule:: rifsdatasets.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.den2radio module
+-----------------------------
+
+.. automodule:: rifsdatasets.den2radio
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.librivox module
+----------------------------
+
+.. automodule:: rifsdatasets.librivox
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifsdatasets.utils module
+-------------------------
+
+.. automodule:: rifsdatasets.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: rifsdatasets
+   :members:
+   :undoc-members:
+   :show-inheritance:

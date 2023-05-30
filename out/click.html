@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The CLI of the package &mdash; docs Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The datasets available in rifs" href="datasets.html" />
+    <link rel="prev" title="Welcome to the documentation of rifs Testing Version!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The CLI of the package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rifs">rifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-align">align</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-augment">augment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-download-dataset">download-dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-download-noise">download-noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-finetune">finetune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-hubert-preprocess">hubert-preprocess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-pretrain">pretrain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">The datasets available in rifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsstatemachine.html">rifsstatemachine package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The CLI of the package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/click.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-cli-of-the-package">
+<h1>The CLI of the package<a class="headerlink" href="#the-cli-of-the-package" title="Permalink to this heading"></a></h1>
+<section id="rifs">
+<h2>rifs<a class="headerlink" href="#rifs" title="Permalink to this heading"></a></h2>
+<p>CLI for rifs package. Contains all the commands that the library supports.
+The CLI is written with click.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND1<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...<span class="w"> </span><span class="o">[</span>COMMAND2<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...<span class="o">]</span>...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-version">
+<span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-version" title="Permalink to this definition"></a></dt>
+<dd><p>Prints the version of the package.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-verbose">
+<span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-verbose" title="Permalink to this definition"></a></dt>
+<dd><p>Enable verbose output.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-quiet">
+<span class="sig-name descname"><span class="pre">--quiet</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-quiet" title="Permalink to this definition"></a></dt>
+<dd><p>Disable all output.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-seed">
+<span class="sig-name descname"><span class="pre">--seed</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;seed&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-seed" title="Permalink to this definition"></a></dt>
+<dd><p>Seed for the random number generator. Default: 0</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-data-path">
+<span class="sig-name descname"><span class="pre">--data-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;data_path&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-data-path" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the data directory. Default: data</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-model-path">
+<span class="sig-name descname"><span class="pre">--model-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;model_path&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-model-path" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the model directory. Default: models</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-output-path">
+<span class="sig-name descname"><span class="pre">--output-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output_path&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-output-path" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the output directory. Default: output</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-noise-path">
+<span class="sig-name descname"><span class="pre">--noise-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;noise_path&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-noise-path" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the noise directory. Default: noise</p>
+</dd></dl>
+
+<section id="rifs-align">
+<h3>align<a class="headerlink" href="#rifs-align" title="Permalink to this heading"></a></h3>
+<p>Align DATASET</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>align<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="o">}</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-align-alignment-method">
+<span class="sig-name descname"><span class="pre">--alignment-method</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;alignment_method&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-align-alignment-method" title="Permalink to this definition"></a></dt>
+<dd><p>Alignment method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Options<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ctc | StateMachineForLevenshtein | StateMachineUnsupervised | StateMachineUnsupervisedNoModel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-align-model">
+<span class="sig-name descname"><span class="pre">--model</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;model&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-align-model" title="Permalink to this definition"></a></dt>
+<dd><p>The path to the model to use for alignment. Can be a huggingface model or a local path.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-align-arg-DATASET">
+<span id="cmdoption-rifs-align-arg-dataset"></span><span class="sig-name descname"><span class="pre">DATASET</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-align-arg-DATASET" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-augment">
+<h3>augment<a class="headerlink" href="#rifs-augment" title="Permalink to this heading"></a></h3>
+<p>Augment DATASET</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>augment<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="o">}</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-augment-with-noise-pack">
+<span class="sig-name descname"><span class="pre">--with-noise-pack</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;with_noise_pack&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-augment-with-noise-pack" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess with noise pack. If not specified, no noise will be added.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-augment-with-room-simulation">
+<span class="sig-name descname"><span class="pre">--with-room-simulation</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-augment-with-room-simulation" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess with simulated room acoustics.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-augment-with-voice-conversion">
+<span class="sig-name descname"><span class="pre">--with-voice-conversion</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-augment-with-voice-conversion" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess with voice conversion.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-augment-arg-DATASET">
+<span id="cmdoption-rifs-augment-arg-dataset"></span><span class="sig-name descname"><span class="pre">DATASET</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-augment-arg-DATASET" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-download-dataset">
+<h3>download-dataset<a class="headerlink" href="#rifs-download-dataset" title="Permalink to this heading"></a></h3>
+<p>Download rifs DATASET</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>download-dataset<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="o">}</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-download-dataset-arg-DATASET">
+<span id="cmdoption-rifs-download-dataset-arg-dataset"></span><span class="sig-name descname"><span class="pre">DATASET</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-download-dataset-arg-DATASET" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-download-noise">
+<h3>download-noise<a class="headerlink" href="#rifs-download-noise" title="Permalink to this heading"></a></h3>
+<p>Download NOISE-PACK from FreeSound.org</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>download-noise<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NOISE_PACK
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-download-noise-arg-NOISE_PACK">
+<span id="cmdoption-rifs-download-noise-arg-noise-pack"></span><span class="sig-name descname"><span class="pre">NOISE_PACK</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-download-noise-arg-NOISE_PACK" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-finetune">
+<h3>finetune<a class="headerlink" href="#rifs-finetune" title="Permalink to this heading"></a></h3>
+<p>Finetune model</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>finetune<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-finetune-pretrained-model">
+<span class="sig-name descname"><span class="pre">--pretrained-model</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pretrained_model&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-finetune-pretrained-model" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the pretrained model on disk or name of Huggingface model to base model on</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-finetune-hours">
+<span class="sig-name descname"><span class="pre">--hours</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;hours&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-finetune-hours" title="Permalink to this definition"></a></dt>
+<dd><p>Number of hours to train for. Default: 0</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-finetune-minutes">
+<span class="sig-name descname"><span class="pre">--minutes</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;minutes&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-finetune-minutes" title="Permalink to this definition"></a></dt>
+<dd><p>Number of minutes to train for. Default: 1</p>
+</dd></dl>
+
+</section>
+<section id="rifs-hubert-preprocess">
+<h3>hubert-preprocess<a class="headerlink" href="#rifs-hubert-preprocess" title="Permalink to this heading"></a></h3>
+<p>Preprocess DATASET for hubert training</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>hubert-preprocess<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="o">}</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-hubert-preprocess-iteration">
+<span class="sig-name descname"><span class="pre">--iteration</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;iteration&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-hubert-preprocess-iteration" title="Permalink to this definition"></a></dt>
+<dd><p>Features for either first or second iteration  of HUBERT training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Options<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1st | 2nd</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-hubert-preprocess-arg-DATASET">
+<span id="cmdoption-rifs-hubert-preprocess-arg-dataset"></span><span class="sig-name descname"><span class="pre">DATASET</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-hubert-preprocess-arg-DATASET" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-pretrain">
+<h3>pretrain<a class="headerlink" href="#rifs-pretrain" title="Permalink to this heading"></a></h3>
+<p>Pretrain model unsupervised</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>pretrain<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>manifest_wav2vec2<span class="p">|</span>wav2vec2_base<span class="p">|</span>wav2vec2_large<span class="p">|</span>wav2ve
+<span class="w">              </span>c2_conformer_base<span class="p">|</span>wav2vec2_conformer_large<span class="p">|</span>hubert_base<span class="p">|</span>data2vec_
+<span class="w">              </span>base<span class="p">|</span>data2vec2_base<span class="p">|</span>data2vec2_large<span class="p">|</span>speechT5_base<span class="o">}</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-pretrain-fairseq-path">
+<span class="sig-name descname"><span class="pre">--fairseq-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;fairseq_path&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-pretrain-fairseq-path" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the fairseq directory.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-pretrain-manifest-source">
+<span class="sig-name descname"><span class="pre">--manifest-source</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;manifest_source&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-pretrain-manifest-source" title="Permalink to this definition"></a></dt>
+<dd><p>Optional: Path to wav files for manifest creation</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-pretrain-arg-MODEL">
+<span id="cmdoption-rifs-pretrain-arg-model"></span><span class="sig-name descname"><span class="pre">MODEL</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-pretrain-arg-MODEL" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to the documentation of rifs Testing Version!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datasets.html" class="btn btn-neutral float-right" title="The datasets available in rifs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

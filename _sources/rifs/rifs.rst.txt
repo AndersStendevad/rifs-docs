@@ -1,0 +1,61 @@
+rifs package
+============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   rifs.hubert_utils
+
+Submodules
+----------
+
+rifs.cli module
+---------------
+
+.. automodule:: rifs.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.fairseq module
+-------------------
+
+.. automodule:: rifs.fairseq
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.hubert module
+------------------
+
+.. automodule:: rifs.hubert
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.hubert\_preprocess module
+------------------------------
+
+.. automodule:: rifs.hubert_preprocess
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.utils module
+-----------------
+
+.. automodule:: rifs.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: rifs
+   :members:
+   :undoc-members:
+   :show-inheritance:

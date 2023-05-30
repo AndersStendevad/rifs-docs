@@ -1,0 +1,7 @@
+rifs.fairseq module
+===================
+
+.. automodule:: rifs.fairseq
+   :members:
+   :undoc-members:
+   :show-inheritance:

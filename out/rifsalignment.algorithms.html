@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifsalignment.algorithms module &mdash; rifs is free speech Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            rifs is free speech
+              <img src="../_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets.html">The datasets available in rifs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">rifs is free speech</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifsalignment.algorithms module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/rifsalignment.algorithms.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rifsalignment.algorithms">
+<span id="rifsalignment-algorithms-module"></span><h1>rifsalignment.algorithms module<a class="headerlink" href="#module-rifsalignment.algorithms" title="Permalink to this heading"></a></h1>
+<p>Algorithms for alignment.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.CTC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsalignment.algorithms.</span></span><span class="sig-name descname"><span class="pre">CTC</span></span><a class="headerlink" href="#rifsalignment.algorithms.CTC" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="rifsalignment.base.html#rifsalignment.base.BaseAlignment" title="rifsalignment.base.BaseAlignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAlignment</span></code></a></p>
+<p>CTC alignment algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.CTC.align">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rifsalignment.datamodels.html#rifsalignment.datamodels.TimedSegment" title="rifsalignment.datamodels.TimedSegment"><span class="pre">TimedSegment</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifsalignment.algorithms.CTC.align" title="Permalink to this definition"></a></dt>
+<dd><p>Align the source and target audio files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>audio_file</strong> (<em>str</em>) – The path to the source audio wav file.</p></li>
+<li><p><strong>text_file</strong> (<em>str</em>) – The path to the source text file.</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – The path to the model to use for alignment. Can be a huggingface model or a local path.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the alignments progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Whether to print anything.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The aligned audio and text.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.CTC.ctc_align_with_transcript">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ctc_align_with_transcript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transcripts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rifsalignment.datamodels.html#rifsalignment.datamodels.TimedSegment" title="rifsalignment.datamodels.TimedSegment"><span class="pre">TimedSegment</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifsalignment.algorithms.CTC.ctc_align_with_transcript" title="Permalink to this definition"></a></dt>
+<dd><p>Align the audio with the transcript.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>audio</strong> (<em>np.ndarray</em>) – The audio to align.</p></li>
+<li><p><strong>transcripts</strong> (<em>str</em>) – The transcript to align.</p></li>
+<li><p><strong>tokenizer</strong> (<em>Wav2Vec2CTCTokenizer</em>) – The tokenizer to use.</p></li>
+<li><p><strong>processor</strong> (<em>Wav2Vec2Processor</em>) – The processor to use.</p></li>
+<li><p><strong>model</strong> (<em>Wav2Vec2ForCTC</em>) – The model to use.</p></li>
+<li><p><strong>sr</strong> (<em>int</em>) – The sampling rate of the audio. Defaults to 16_000.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The aligned audio and text.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.StateMachineForLevenshtein">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsalignment.algorithms.</span></span><span class="sig-name descname"><span class="pre">StateMachineForLevenshtein</span></span><a class="headerlink" href="#rifsalignment.algorithms.StateMachineForLevenshtein" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="rifsalignment.base.html#rifsalignment.base.BaseAlignment" title="rifsalignment.base.BaseAlignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAlignment</span></code></a></p>
+<p>State machine alignment algorithm with Levenshtein.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.StateMachineForLevenshtein.align">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rifsalignment.datamodels.html#rifsalignment.datamodels.TimedSegment" title="rifsalignment.datamodels.TimedSegment"><span class="pre">TimedSegment</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifsalignment.algorithms.StateMachineForLevenshtein.align" title="Permalink to this definition"></a></dt>
+<dd><p>Align the source and target audio files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>audio_file</strong> (<em>str</em>) – The path to the source audio wav file.</p></li>
+<li><p><strong>text_file</strong> (<em>str</em>) – The path to the source text file.</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – The path to the model to use for alignment. Can be a huggingface model or a local path.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print verbose output. Defaults to False.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Whether to print any output. Defaults to False.</p></li>
+<li><p><strong>max_depth</strong> (<em>int</em>) – The maximum depth of the permutations. Defaults to 10.</p></li>
+<li><p><strong>max_duration</strong> (<em>float</em>) – The maximum duration of the audio file to align. Skip of too long.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.StateMachineUnsupervised">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsalignment.algorithms.</span></span><span class="sig-name descname"><span class="pre">StateMachineUnsupervised</span></span><a class="headerlink" href="#rifsalignment.algorithms.StateMachineUnsupervised" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="rifsalignment.base.html#rifsalignment.base.BaseAlignment" title="rifsalignment.base.BaseAlignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAlignment</span></code></a></p>
+<p>Unsupervised alignment with state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.StateMachineUnsupervised.align">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rifsalignment.datamodels.html#rifsalignment.datamodels.TimedSegment" title="rifsalignment.datamodels.TimedSegment"><span class="pre">TimedSegment</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifsalignment.algorithms.StateMachineUnsupervised.align" title="Permalink to this definition"></a></dt>
+<dd><p>Align a single audio file with no text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>audio_file</strong> (<em>str</em>) – The path to the source audio wav file.</p></li>
+<li><p><strong>text_file</strong> (<em>str</em>) – The path to the source text file.</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – The path to the model to use for alignment. Can be a huggingface model or a local path.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print verbose output. Defaults to False.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Whether to print any output. Defaults to False.</p></li>
+<li><p><strong>max_duration</strong> (<em>float</em>) – The maximum duration of the audio file to align. Skip of too long.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.StateMachineUnsupervisedNoModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsalignment.algorithms.</span></span><span class="sig-name descname"><span class="pre">StateMachineUnsupervisedNoModel</span></span><a class="headerlink" href="#rifsalignment.algorithms.StateMachineUnsupervisedNoModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="rifsalignment.base.html#rifsalignment.base.BaseAlignment" title="rifsalignment.base.BaseAlignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAlignment</span></code></a></p>
+<p>Unsupervised alignment with state machine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsalignment.algorithms.StateMachineUnsupervisedNoModel.align">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rifsalignment.datamodels.html#rifsalignment.datamodels.TimedSegment" title="rifsalignment.datamodels.TimedSegment"><span class="pre">TimedSegment</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifsalignment.algorithms.StateMachineUnsupervisedNoModel.align" title="Permalink to this definition"></a></dt>
+<dd><p>Align a single audio file with no text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>audio_file</strong> (<em>str</em>) – The path to the source audio wav file.</p></li>
+<li><p><strong>text_file</strong> (<em>str</em>) – The path to the source text file.</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – The path to the model to use for alignment. Can be a huggingface model or a local path.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print verbose output. Defaults to False.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Whether to print any output. Defaults to False.</p></li>
+<li><p><strong>max_duration</strong> (<em>float</em>) – The maximum duration of the audio file to align. Skip of too long.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

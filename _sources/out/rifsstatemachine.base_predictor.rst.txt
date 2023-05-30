@@ -1,0 +1,7 @@
+rifsstatemachine.base\_predictor module
+=======================================
+
+.. automodule:: rifsstatemachine.base_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:

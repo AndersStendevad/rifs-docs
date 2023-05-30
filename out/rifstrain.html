@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rifstrain package &mdash; Home Testing Version
+ documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="rifsstatemachine package" href="rifsstatemachine.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Home
+              <img src="../_static/logo-no-background.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../click.html">The CLI of the package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets.html">The datasets available in rifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifs.html">rifs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsalignment.html">rifsalignment package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsaugmentation.html">rifsaugmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsdatasets.html">rifsdatasets package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rifsstatemachine.html">rifsstatemachine package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rifstrain package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rifstrain">rifstrain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rifstrain.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rifstrain.finetune"><code class="docutils literal notranslate"><span class="pre">finetune()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.callbacks">rifstrain.callbacks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#callbacks">Callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger"><code class="docutils literal notranslate"><span class="pre">CsvLogger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger.on_init_end"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_init_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger.on_step_begin"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_step_begin()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.callbacks.Timekeeper"><code class="docutils literal notranslate"><span class="pre">Timekeeper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.callbacks.Timekeeper.on_step_end"><code class="docutils literal notranslate"><span class="pre">Timekeeper.on_step_end()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.callbacks.dumper"><code class="docutils literal notranslate"><span class="pre">dumper()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.compute_metrics">rifstrain.compute_metrics module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compute-metrics">Compute metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.compute_metrics.compute_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.datasets">rifstrain.datasets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#datasets">Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.datasets.SpeechCollator"><code class="docutils literal notranslate"><span class="pre">SpeechCollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.datasets.SpeechDataset"><code class="docutils literal notranslate"><span class="pre">SpeechDataset</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.evaluate">rifstrain.evaluate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.evaluate.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.finetune">rifstrain.finetune module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fine-tune">Fine tune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.finetune.finetune"><code class="docutils literal notranslate"><span class="pre">finetune()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.settings">rifstrain.settings module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.settings.ModelSettings"><code class="docutils literal notranslate"><span class="pre">ModelSettings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.ModelSettings.attention_dropout"><code class="docutils literal notranslate"><span class="pre">ModelSettings.attention_dropout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.ModelSettings.feat_proj_dropout"><code class="docutils literal notranslate"><span class="pre">ModelSettings.feat_proj_dropout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.ModelSettings.hidden_dropout"><code class="docutils literal notranslate"><span class="pre">ModelSettings.hidden_dropout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.ModelSettings.layerdrop"><code class="docutils literal notranslate"><span class="pre">ModelSettings.layerdrop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.ModelSettings.mask_time_prob"><code class="docutils literal notranslate"><span class="pre">ModelSettings.mask_time_prob</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.ModelSettings.sampling_rate"><code class="docutils literal notranslate"><span class="pre">ModelSettings.sampling_rate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.settings.TrainerSettings"><code class="docutils literal notranslate"><span class="pre">TrainerSettings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.TrainerSettings.batch_size"><code class="docutils literal notranslate"><span class="pre">TrainerSettings.batch_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.TrainerSettings.lr"><code class="docutils literal notranslate"><span class="pre">TrainerSettings.lr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.settings.TrainerSettings.token"><code class="docutils literal notranslate"><span class="pre">TrainerSettings.token</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.utils">rifstrain.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#utils">Utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.utils.PrepareDataset"><code class="docutils literal notranslate"><span class="pre">PrepareDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.utils.RemoveSpecialCharacters"><code class="docutils literal notranslate"><span class="pre">RemoveSpecialCharacters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.utils.ToTensor"><code class="docutils literal notranslate"><span class="pre">ToTensor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.vocab">rifstrain.vocab module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vocab">Vocab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.vocab.get_vocab"><code class="docutils literal notranslate"><span class="pre">get_vocab()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.vocab.write_vocab"><code class="docutils literal notranslate"><span class="pre">write_vocab()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Home</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rifstrain package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/out/rifstrain.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-rifstrain">
+<span id="rifstrain-package"></span><h1>rifstrain package<a class="headerlink" href="#module-rifstrain" title="Permalink to this heading"></a></h1>
+<section id="rifstrain">
+<h2>rifstrain<a class="headerlink" href="#rifstrain" title="Permalink to this heading"></a></h2>
+<p>This package contains the code for training and finetuning ASR models.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.evaluate">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_predict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the model on the given dataset. Can also evaluate intermediate models saved at steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_test_file</strong> (<em>str</em>) – Path to the test csv file.</p></li>
+<li><p><strong>data_path</strong> (<em>str</em>) – Path to the dataset folder.</p></li>
+<li><p><strong>model_path</strong> (<em>str</em>) – Path to the model file.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Path to the output folder.</p></li>
+<li><p><strong>dataset_name</strong> (<em>str</em>) – name of dataset to load data from</p></li>
+<li><p><strong>eval_snapshots</strong> (<em>bool</em>) – Whether to evaluate intermediate models saved at steps.</p></li>
+<li><p><strong>max_predict</strong> (<em>int</em>) – Maximum number of predictions to make.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.finetune">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.</span></span><span class="sig-name descname"><span class="pre">finetune</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_train_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduced_training_arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_save_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.finetune" title="Permalink to this definition"></a></dt>
+<dd><p>Fine-tunes the model on the given dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_train_file</strong> (<em>str</em>) – Path to the train csv file.</p></li>
+<li><p><strong>csv_test_file</strong> (<em>str</em>) – Path to the test csv file.</p></li>
+<li><p><strong>pretrained_path</strong> (<em>str</em>) – Path to the pretrained model.</p></li>
+<li><p><strong>hours</strong> (<em>int</em>) – Number of hours to train for.</p></li>
+<li><p><strong>minutes</strong> (<em>int</em>) – Number of minutes to train for in addition to hours.</p></li>
+<li><p><strong>reduced_training_arguments</strong> (<em>bool</em>) – Whether to run a test run with reduced parameters.</p></li>
+<li><p><strong>model_save_location</strong> (<em>str</em>) – Path to the directory where the model should be saved.</p></li>
+<li><p><strong>warmup_steps</strong> (<em>int</em>) – Number of warmup steps.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the training progress.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Whether to print nothing.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Random seed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-rifstrain.callbacks">
+<span id="rifstrain-callbacks-module"></span><h2>rifstrain.callbacks module<a class="headerlink" href="#module-rifstrain.callbacks" title="Permalink to this heading"></a></h2>
+<section id="callbacks">
+<h3>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this heading"></a></h3>
+<p>File containing callback functions used during Training.</p>
+<p>We implement the following Callback options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CsvLogger: Save training metrics to CSV file.</p></li>
+<li><p>Timekeeper: Stop model training when time is up.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.callbacks.CsvLogger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.callbacks.</span></span><span class="sig-name descname"><span class="pre">CsvLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.CsvLogger" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrainerCallback</span></code></p>
+<p>Callback for logging training and evaluation metrics to a csv file.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifstrain.callbacks.CsvLogger.on_init_end">
+<span class="sig-name descname"><span class="pre">on_init_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.CsvLogger.on_init_end" title="Permalink to this definition"></a></dt>
+<dd><p>Callback function for logging training and evaluation metrics to a csv file.</p>
+<p>On trainer initialization will set up the csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – </p></li>
+<li><p><strong>state</strong> – </p></li>
+<li><p><strong>control</strong> – </p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rifstrain.callbacks.CsvLogger.on_step_begin">
+<span class="sig-name descname"><span class="pre">on_step_begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.CsvLogger.on_step_begin" title="Permalink to this definition"></a></dt>
+<dd><p>Callback function for logging training and evaluation metrics to a csv file.</p>
+<p>On step on training step begin will write to CSV previous metrics if any</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – </p></li>
+<li><p><strong>state</strong> – </p></li>
+<li><p><strong>control</strong> – </p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.callbacks.Timekeeper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.callbacks.</span></span><span class="sig-name descname"><span class="pre">Timekeeper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hours</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.Timekeeper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrainerCallback</span></code></p>
+<p>Callback to stop training after a certain amount of time</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifstrain.callbacks.Timekeeper.on_step_end">
+<span class="sig-name descname"><span class="pre">on_step_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.Timekeeper.on_step_end" title="Permalink to this definition"></a></dt>
+<dd><p>Stop training if time is up</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – </p></li>
+<li><p><strong>state</strong> – </p></li>
+<li><p><strong>control</strong> – </p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.callbacks.dumper">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.callbacks.</span></span><span class="sig-name descname"><span class="pre">dumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.dumper" title="Permalink to this definition"></a></dt>
+<dd><p>JSON serializer for objects not serializable by default json code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>object</em>) – Object to be serialized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.compute_metrics">
+<span id="rifstrain-compute-metrics-module"></span><h2>rifstrain.compute_metrics module<a class="headerlink" href="#module-rifstrain.compute_metrics" title="Permalink to this heading"></a></h2>
+<section id="compute-metrics">
+<h3>Compute metrics<a class="headerlink" href="#compute-metrics" title="Permalink to this heading"></a></h3>
+<p>Compute the different metric used to evaluate.</p>
+<p>Right now we only implement the following metrics:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>WER</p></li>
+</ul>
+</div></blockquote>
+<p>This is by default what is loaded when you use compute_metrics</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.compute_metrics.compute_metrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.compute_metrics.</span></span><span class="sig-name descname"><span class="pre">compute_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.compute_metrics.compute_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Compute metrics for the model.</p>
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.datasets">
+<span id="rifstrain-datasets-module"></span><h2>rifstrain.datasets module<a class="headerlink" href="#module-rifstrain.datasets" title="Permalink to this heading"></a></h2>
+<section id="datasets">
+<h3>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading"></a></h3>
+<p>Not to be confused with rifsdatasets (which is a package for reading and
+writing datasets), this module contains the classes for the datasets for
+training. The classes contained in the module are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SpeechDataset</p></li>
+<li><p>SpeechCollator</p></li>
+</ul>
+</div></blockquote>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.datasets.SpeechCollator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.datasets.</span></span><span class="sig-name descname"><span class="pre">SpeechCollator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AutoProcessor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.datasets.SpeechCollator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data collator that will dynamically pad the inputs received.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>processor</strong> – The processor used for proccessing the data.</p></li>
+<li><p><strong>padding</strong> (<em>Union</em><em>[</em><em>bool</em><em>, </em><em>str</em><em>, </em><em>PaddingStrategy</em><em>]</em>) – Select a strategy to pad the returned sequences (according to the model’s padding side and padding index) among:
+* <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">'longest'</span></code>: Pad to the longest sequence in the batch (or no padding if only a single
+sequence if provided).
+* <code class="xref py py-obj docutils literal notranslate"><span class="pre">'max_length'</span></code>: Pad to a maximum length specified with the argument <code class="xref py py-obj docutils literal notranslate"><span class="pre">max_length</span></code> or to the
+maximum acceptable input length for the model if that argument is not provided.
+* <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">'do_not_pad'</span></code> (default): No padding (i.e., can output a batch with sequences of
+different lengths).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.datasets.SpeechDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.datasets.</span></span><span class="sig-name descname"><span class="pre">SpeechDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.datasets.SpeechDataset" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></p>
+<p>SpeechDataset implements a generic Dataset class for the speech datasets</p>
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.evaluate">
+<span id="rifstrain-evaluate-module"></span><h2>rifstrain.evaluate module<a class="headerlink" href="#module-rifstrain.evaluate" title="Permalink to this heading"></a></h2>
+<p>Evaluate file</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.evaluate.evaluate">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_predict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.evaluate.evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluates the model on the given dataset. Can also evaluate intermediate models saved at steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_test_file</strong> (<em>str</em>) – Path to the test csv file.</p></li>
+<li><p><strong>data_path</strong> (<em>str</em>) – Path to the dataset folder.</p></li>
+<li><p><strong>model_path</strong> (<em>str</em>) – Path to the model file.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Path to the output folder.</p></li>
+<li><p><strong>dataset_name</strong> (<em>str</em>) – name of dataset to load data from</p></li>
+<li><p><strong>eval_snapshots</strong> (<em>bool</em>) – Whether to evaluate intermediate models saved at steps.</p></li>
+<li><p><strong>max_predict</strong> (<em>int</em>) – Maximum number of predictions to make.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.finetune">
+<span id="rifstrain-finetune-module"></span><h2>rifstrain.finetune module<a class="headerlink" href="#module-rifstrain.finetune" title="Permalink to this heading"></a></h2>
+<section id="fine-tune">
+<h3>Fine tune<a class="headerlink" href="#fine-tune" title="Permalink to this heading"></a></h3>
+<p>Module for fine-tuning the ASR models</p>
+<p>This module contains only one function:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>finetune: fine-tune the ASR models</p></li>
+</ul>
+</div></blockquote>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.finetune.finetune">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.finetune.</span></span><span class="sig-name descname"><span class="pre">finetune</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_train_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduced_training_arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_save_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.finetune.finetune" title="Permalink to this definition"></a></dt>
+<dd><p>Fine-tunes the model on the given dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_train_file</strong> (<em>str</em>) – Path to the train csv file.</p></li>
+<li><p><strong>csv_test_file</strong> (<em>str</em>) – Path to the test csv file.</p></li>
+<li><p><strong>pretrained_path</strong> (<em>str</em>) – Path to the pretrained model.</p></li>
+<li><p><strong>hours</strong> (<em>int</em>) – Number of hours to train for.</p></li>
+<li><p><strong>minutes</strong> (<em>int</em>) – Number of minutes to train for in addition to hours.</p></li>
+<li><p><strong>reduced_training_arguments</strong> (<em>bool</em>) – Whether to run a test run with reduced parameters.</p></li>
+<li><p><strong>model_save_location</strong> (<em>str</em>) – Path to the directory where the model should be saved.</p></li>
+<li><p><strong>warmup_steps</strong> (<em>int</em>) – Number of warmup steps.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the training progress.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Whether to print nothing.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Random seed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.settings">
+<span id="rifstrain-settings-module"></span><h2>rifstrain.settings module<a class="headerlink" href="#module-rifstrain.settings" title="Permalink to this heading"></a></h2>
+<section id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this heading"></a></h3>
+<p>Settings used for training and evaluating the model.</p>
+<p>These can be changed to suit the user’s needs. We recommend using the default
+settings for the first run.</p>
+<p>You can pass the settings via ENV variables or by changing the values here.</p>
+</section>
+<dl class="py class pydantic_settings">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">settings</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.settings.</span></span><span class="sig-name descname"><span class="pre">ModelSettings</span></span><a class="headerlink" href="#rifstrain.settings.ModelSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSettings</span></code></p>
+<p>Model settings. These are loaded from the .env config file. prefix=MS_</p>
+<p>Some of these are not used for all models.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ModelSettings&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Model settings. These are loaded from the .env config file. prefix=MS_\n\nSome of these are not used for all models.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;sampling_rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sampling Rate&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16000</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ms_sampling_rate&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;attention_dropout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Attention Dropout&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ms_attention_dropout&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;hidden_dropout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hidden Dropout&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ms_hidden_dropout&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;feat_proj_dropout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feat Proj Dropout&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ms_feat_proj_dropout&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;mask_time_prob&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mask Time Prob&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ms_mask_time_prob&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;layerdrop&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Layerdrop&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ms_layerdrop&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env_file</strong>: <em>str = .env</em></p></li>
+<li><p><strong>env_file_encoding</strong>: <em>str = utf-8</em></p></li>
+<li><p><strong>env_prefix</strong>: <em>str = MS_</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#rifstrain.settings.ModelSettings.attention_dropout" title="rifstrain.settings.ModelSettings.attention_dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">attention_dropout</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.ModelSettings.feat_proj_dropout" title="rifstrain.settings.ModelSettings.feat_proj_dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">feat_proj_dropout</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.ModelSettings.hidden_dropout" title="rifstrain.settings.ModelSettings.hidden_dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hidden_dropout</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.ModelSettings.layerdrop" title="rifstrain.settings.ModelSettings.layerdrop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layerdrop</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.ModelSettings.mask_time_prob" title="rifstrain.settings.ModelSettings.mask_time_prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask_time_prob</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.ModelSettings.sampling_rate" title="rifstrain.settings.ModelSettings.sampling_rate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sampling_rate</span> <span class="pre">(int)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings.attention_dropout">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attention_dropout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#rifstrain.settings.ModelSettings.attention_dropout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings.feat_proj_dropout">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feat_proj_dropout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#rifstrain.settings.ModelSettings.feat_proj_dropout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings.hidden_dropout">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hidden_dropout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#rifstrain.settings.ModelSettings.hidden_dropout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings.layerdrop">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layerdrop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#rifstrain.settings.ModelSettings.layerdrop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings.mask_time_prob">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mask_time_prob</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#rifstrain.settings.ModelSettings.mask_time_prob" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.ModelSettings.sampling_rate">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sampling_rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16000</span></em><a class="headerlink" href="#rifstrain.settings.ModelSettings.sampling_rate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_settings">
+<dt class="sig sig-object py" id="rifstrain.settings.TrainerSettings">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">settings</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.settings.</span></span><span class="sig-name descname"><span class="pre">TrainerSettings</span></span><a class="headerlink" href="#rifstrain.settings.TrainerSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSettings</span></code></p>
+<p>Trainer settings. These are loaded from the .env config file. prefix=TS_</p>
+<p>Some of these are not used for all models.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TrainerSettings&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trainer settings. These are loaded from the .env config file. prefix=TS_\n\nSome of these are not used for all models.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;batch_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Batch Size&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ts_batch_size&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;lr&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lr&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5e-07</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ts_lr&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Token&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;env_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{&#39;ts_token&#39;}&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env_file</strong>: <em>str = .env</em></p></li>
+<li><p><strong>env_file_encoding</strong>: <em>str = utf-8</em></p></li>
+<li><p><strong>env_prefix</strong>: <em>str = TS_</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#rifstrain.settings.TrainerSettings.batch_size" title="rifstrain.settings.TrainerSettings.batch_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_size</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.TrainerSettings.lr" title="rifstrain.settings.TrainerSettings.lr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lr</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#rifstrain.settings.TrainerSettings.token" title="rifstrain.settings.TrainerSettings.token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">token</span> <span class="pre">(str)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.TrainerSettings.batch_size">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">batch_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#rifstrain.settings.TrainerSettings.batch_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.TrainerSettings.lr">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5e-07</span></em><a class="headerlink" href="#rifstrain.settings.TrainerSettings.lr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="rifstrain.settings.TrainerSettings.token">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">token</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#rifstrain.settings.TrainerSettings.token" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.utils">
+<span id="rifstrain-utils-module"></span><h2>rifstrain.utils module<a class="headerlink" href="#module-rifstrain.utils" title="Permalink to this heading"></a></h2>
+<section id="utils">
+<h3>Utils<a class="headerlink" href="#utils" title="Permalink to this heading"></a></h3>
+<p>Utility functions for the training.</p>
+<p>This includes the following classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ToTensor</p></li>
+<li><p>RemoveSpecialCharacters</p></li>
+<li><p>PrepareDataset</p></li>
+</ul>
+</div></blockquote>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.utils.PrepareDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.utils.</span></span><span class="sig-name descname"><span class="pre">PrepareDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.utils.PrepareDataset" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Prepare the dataset for the model.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.utils.RemoveSpecialCharacters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.utils.</span></span><span class="sig-name descname"><span class="pre">RemoveSpecialCharacters</span></span><a class="headerlink" href="#rifstrain.utils.RemoveSpecialCharacters" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Remove special characters from the transcript.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rifstrain.utils.ToTensor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.utils.</span></span><span class="sig-name descname"><span class="pre">ToTensor</span></span><a class="headerlink" href="#rifstrain.utils.ToTensor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Convert ndarray in sample to Tensors.</p>
+</dd></dl>
+
+</section>
+<section id="module-rifstrain.vocab">
+<span id="rifstrain-vocab-module"></span><h2>rifstrain.vocab module<a class="headerlink" href="#module-rifstrain.vocab" title="Permalink to this heading"></a></h2>
+<section id="vocab">
+<h3>Vocab<a class="headerlink" href="#vocab" title="Permalink to this heading"></a></h3>
+<p>This module contains the vocabulary related functions.
+For now it only contains a Danish vocabulary.</p>
+<p>The module contains the following functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>write_vocab</p></li>
+<li><p>get_vocab</p></li>
+</ul>
+</div></blockquote>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.vocab.get_vocab">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.vocab.</span></span><span class="sig-name descname"><span class="pre">get_vocab</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#rifstrain.vocab.get_vocab" title="Permalink to this definition"></a></dt>
+<dd><p>Get vocab from pre-trained model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vocab</strong></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rifstrain.vocab.write_vocab">
+<span class="sig-prename descclassname"><span class="pre">rifstrain.vocab.</span></span><span class="sig-name descname"><span class="pre">write_vocab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rifstrain.vocab.write_vocab" title="Permalink to this definition"></a></dt>
+<dd><p>Write vocab to file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dir</strong> (<em>str</em>) – Directory to write the vocab to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rifsstatemachine.html" class="btn btn-neutral float-left" title="rifsstatemachine package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anders Stendevad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

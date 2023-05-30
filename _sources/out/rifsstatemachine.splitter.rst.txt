@@ -1,0 +1,7 @@
+rifsstatemachine.splitter module
+================================
+
+.. automodule:: rifsstatemachine.splitter
+   :members:
+   :undoc-members:
+   :show-inheritance:

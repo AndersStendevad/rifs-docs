@@ -1,0 +1,7 @@
+rifsalignment.align\_csv module
+===============================
+
+.. automodule:: rifsalignment.align_csv
+   :members:
+   :undoc-members:
+   :show-inheritance:

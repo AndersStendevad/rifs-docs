@@ -1,0 +1,42 @@
+rifs package
+============
+
+.. automodule:: rifs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+rifs.cli module
+---------------
+
+.. automodule:: rifs.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.fairseq module
+-------------------
+
+.. automodule:: rifs.fairseq
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.hubert module
+------------------
+
+.. automodule:: rifs.hubert
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rifs.utils module
+-----------------
+
+.. automodule:: rifs.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
