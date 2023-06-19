@@ -114,6 +114,13 @@
 </li>
       </ul></li>
       <li>
+    --check-alignments
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-datasplit-check-alignments">rifs-datasplit command line option</a>
+</li>
+      </ul></li>
+      <li>
     --custom-dataset
 
       <ul>
@@ -141,6 +148,13 @@
 
       <ul>
         <li><a href="click.html#cmdoption-rifs-finetune-hours">rifs-finetune command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --include-audio-folder
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-augment-include-audio-folder">rifs-augment command line option</a>
 </li>
       </ul></li>
       <li>
@@ -176,6 +190,8 @@
 
       <ul>
         <li><a href="click.html#cmdoption-rifs-align-model">rifs-align command line option</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-model">rifs-evaluate command line option</a>
 </li>
       </ul></li>
       <li>
@@ -234,6 +250,20 @@
 
       <ul>
         <li><a href="click.html#cmdoption-rifs-merge-datasets-s">rifs-merge-datasets command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --spellcheck-model
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-evaluate-spellcheck-model">rifs-evaluate command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --split
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-evaluate-split">rifs-evaluate command line option</a>
 </li>
       </ul></li>
       <li>
@@ -324,12 +354,20 @@
         <li><a href="out/rifsalignment.html#rifsalignment.base.BaseAlignment.align">(rifsalignment.base.BaseAlignment static method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifsalignment.html#rifsalignment.align_csv">align_csv() (in module rifsalignment)</a>
 
       <ul>
         <li><a href="out/rifsalignment.html#rifsalignment.align_csv.align_csv">(in module rifsalignment.align_csv)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="out/rifsalignment.html#rifsalignment.experiment.align_experiment">align_experiment() (in module rifsalignment.experiment)</a>
+</li>
+      <li><a href="out/rifsalignment.html#rifsalignment.align_experiment_folder">align_experiment_folder() (in module rifsalignment)</a>
+
+      <ul>
+        <li><a href="out/rifsalignment.html#rifsalignment.experiment.align_experiment_folder">(in module rifsalignment.experiment)</a>
 </li>
       </ul></li>
       <li><a href="out/rifstrain.html#rifstrain.settings.ModelSettings.attention_dropout">attention_dropout (rifstrain.settings.ModelSettings attribute)</a>
@@ -368,10 +406,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifsstatemachine.html#rifsstatemachine.utils.calculate_dB">calculate_dB() (in module rifsstatemachine.utils)</a>
 </li>
+      <li><a href="out/rifstrain.html#rifstrain.compute_metrics.compute_metrics.calculate_metrics">calculate_metrics() (rifstrain.compute_metrics.compute_metrics method)</a>
+</li>
       <li><a href="out/rifsstatemachine.html#rifsstatemachine.utils.calculate_rms">calculate_rms() (in module rifsstatemachine.utils)</a>
 </li>
       <li><a href="out/rifs.html#rifs.fairseq.check_fairseq_config">check_fairseq_config() (in module rifs.fairseq)</a>
 </li>
+      <li><a href="out/rifsalignment.html#rifsalignment.check_for_good_alignment">check_for_good_alignment() (in module rifsalignment)</a>
+
+      <ul>
+        <li><a href="out/rifsalignment.html#rifsalignment.experiment.check_for_good_alignment">(in module rifsalignment.experiment)</a>
+</li>
+      </ul></li>
       <li><a href="out/rifsstatemachine.html#rifsstatemachine.base.StateMachine.check_for_speech">check_for_speech() (rifsstatemachine.base.StateMachine method)</a>
 
       <ul>
@@ -380,10 +426,12 @@
         <li><a href="out/rifsstatemachine.html#rifsstatemachine.splitter.Splitter.check_for_speech">(rifsstatemachine.splitter.Splitter method)</a>
 </li>
       </ul></li>
-      <li><a href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress">CloneProgress (class in rifsdatasets.utils)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress">CloneProgress (class in rifsdatasets.utils)</a>
+</li>
+      <li><a href="out/rifsdatasets.html#rifsdatasets.commonvoicedansk.CommonVoiceDansk">CommonVoiceDansk (class in rifsdatasets.commonvoicedansk)</a>
+</li>
       <li><a href="out/rifstrain.html#rifstrain.compute_metrics.compute_metrics">compute_metrics (class in rifstrain.compute_metrics)</a>
 </li>
       <li><a href="out/rifsstatemachine.html#rifsstatemachine.states.State.context">context (rifsstatemachine.states.State property)</a>
@@ -404,6 +452,10 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="out/rifsdatasets.html#rifsdatasets.danpass.DanPASS">DanPASS (class in rifsdatasets.danpass)</a>
+</li>
+      <li><a href="out/rifsdatasets.html#rifsdatasets.dansketaler.DanskeTaler">DanskeTaler (class in rifsdatasets.dansketaler)</a>
+</li>
       <li>
     DATASET
 
@@ -415,6 +467,10 @@
         <li><a href="click.html#cmdoption-rifs-datasplit-arg-DATASET">rifs-datasplit command line option</a>
 </li>
         <li><a href="click.html#cmdoption-rifs-download-dataset-arg-DATASET">rifs-download-dataset command line option</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-arg-DATASET">rifs-evaluate command line option</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-alignments-arg-DATASET">rifs-evaluate-alignments command line option</a>
 </li>
         <li><a href="click.html#cmdoption-rifs-finetune-arg-DATASET">rifs-finetune command line option</a>
 </li>
@@ -430,11 +486,21 @@
       <li><a href="out/rifsdatasets.html#rifsdatasets.base.Base.download">download() (rifsdatasets.base.Base static method)</a>
 
       <ul>
+        <li><a href="out/rifsdatasets.html#rifsdatasets.commonvoicedansk.CommonVoiceDansk.download">(rifsdatasets.commonvoicedansk.CommonVoiceDansk static method)</a>
+</li>
+        <li><a href="out/rifsdatasets.html#rifsdatasets.danpass.DanPASS.download">(rifsdatasets.danpass.DanPASS static method)</a>
+</li>
+        <li><a href="out/rifsdatasets.html#rifsdatasets.dansketaler.DanskeTaler.download">(rifsdatasets.dansketaler.DanskeTaler static method)</a>
+</li>
         <li><a href="out/rifsdatasets.html#rifsdatasets.den2radio.Den2Radio.download">(rifsdatasets.den2radio.Den2Radio static method)</a>
 </li>
         <li><a href="out/rifsdatasets.html#rifsdatasets.forskerzonen.Forskerzonen.download">(rifsdatasets.forskerzonen.Forskerzonen static method)</a>
 </li>
+        <li><a href="out/rifsdatasets.html#rifsdatasets.freesound.FreeSoundOrg.download">(rifsdatasets.freesound.FreeSoundOrg static method)</a>
+</li>
         <li><a href="out/rifsdatasets.html#rifsdatasets.librivox.LibriVoxDansk.download">(rifsdatasets.librivox.LibriVoxDansk static method)</a>
+</li>
+        <li><a href="out/rifsdatasets.html#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken.download">(rifsdatasets.nstdanishspråkbanken.NSTDanishSpråkbanken static method)</a>
 </li>
       </ul></li>
       <li><a href="out/rifstrain.html#rifstrain.callbacks.dumper">dumper() (in module rifstrain.callbacks)</a>
@@ -453,14 +519,23 @@
         <li><a href="out/rifsalignment.html#rifsalignment.TimedSegment.end">(rifsalignment.TimedSegment attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifsdatasets.html#rifsdatasets.utils.CloneProgress.error_lines">error_lines (rifsdatasets.utils.CloneProgress attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifstrain.html#rifstrain.evaluate">evaluate() (in module rifstrain)</a>
 
       <ul>
         <li><a href="out/rifstrain.html#rifstrain.evaluate.evaluate">(in module rifstrain.evaluate)</a>
+</li>
+      </ul></li>
+      <li>
+    EXPERIMENT_NAME
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-evaluate-arg-EXPERIMENT_NAME">rifs-evaluate command line option</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-export-table-arg-EXPERIMENT_NAME">rifs-export-table command line option</a>
 </li>
       </ul></li>
   </ul></td>
@@ -475,17 +550,19 @@
 </li>
       <li><a href="out/rifstrain.html#rifstrain.settings.ModelSettings.feat_proj_dropout">feat_proj_dropout (rifstrain.settings.ModelSettings attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifstrain.html#rifstrain.finetune">finetune() (in module rifstrain)</a>
 
       <ul>
         <li><a href="out/rifstrain.html#rifstrain.finetune.finetune">(in module rifstrain.finetune)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifs.html#rifs.fairseq.flatten">flatten() (in module rifs.fairseq)</a>
 </li>
       <li><a href="out/rifsdatasets.html#rifsdatasets.forskerzonen.Forskerzonen">Forskerzonen (class in rifsdatasets.forskerzonen)</a>
+</li>
+      <li><a href="out/rifsdatasets.html#rifsdatasets.freesound.FreeSoundOrg">FreeSoundOrg (class in rifsdatasets.freesound)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -613,6 +690,8 @@
 </li>
         <li><a href="out/rifsalignment.html#module-rifsalignment.datamodels">rifsalignment.datamodels</a>
 </li>
+        <li><a href="out/rifsalignment.html#module-rifsalignment.experiment">rifsalignment.experiment</a>
+</li>
         <li><a href="out/rifsalignment.html#module-rifsalignment.preprocess">rifsalignment.preprocess</a>
 </li>
         <li><a href="out/rifsaugmentation.html#module-rifsaugmentation">rifsaugmentation</a>
@@ -629,13 +708,23 @@
 </li>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.base">rifsdatasets.base</a>
 </li>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.commonvoicedansk">rifsdatasets.commonvoicedansk</a>
+</li>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.danpass">rifsdatasets.danpass</a>
+</li>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.dansketaler">rifsdatasets.dansketaler</a>
+</li>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.den2radio">rifsdatasets.den2radio</a>
 </li>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.forskerzonen">rifsdatasets.forskerzonen</a>
 </li>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.freesound">rifsdatasets.freesound</a>
+</li>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.librivox">rifsdatasets.librivox</a>
 </li>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.merge_rifsdatasets">rifsdatasets.merge_rifsdatasets</a>
+</li>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.nstdanishsprakbanken">rifsdatasets.nstdanishspråkbanken</a>
 </li>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.split_dataset">rifsdatasets.split_dataset</a>
 </li>
@@ -689,8 +778,6 @@
         <li><a href="click.html#cmdoption-rifs-merge-datasets-arg-NEW_DATASET">rifs-merge-datasets command line option</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     NOISE_PACK
 
@@ -698,7 +785,11 @@
         <li><a href="click.html#cmdoption-rifs-download-noise-arg-NOISE_PACK">rifs-download-noise command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="out/rifsaugmentation.html#rifsaugmentation.augmentation.NoiseAugmentation">NoiseAugmentation (class in rifsaugmentation.augmentation)</a>
+</li>
+      <li><a href="out/rifsdatasets.html#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken">NSTDanishSpråkbanken (class in rifsdatasets.nstdanishspråkbanken)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -706,9 +797,9 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_init_end">on_init_end() (rifstrain.callbacks.CsvLogger method)</a>
+      <li><a href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_evaluate">on_evaluate() (rifstrain.callbacks.CsvLogger method)</a>
 </li>
-      <li><a href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_step_begin">on_step_begin() (rifstrain.callbacks.CsvLogger method)</a>
+      <li><a href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_init_end">on_init_end() (rifstrain.callbacks.CsvLogger method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -831,6 +922,8 @@
     rifs-augment command line option
 
       <ul>
+        <li><a href="click.html#cmdoption-rifs-augment-include-audio-folder">--include-audio-folder</a>
+</li>
         <li><a href="click.html#cmdoption-rifs-augment-with-noise-pack">--with-noise-pack</a>
 </li>
         <li><a href="click.html#cmdoption-rifs-augment-with-room-simulation">--with-room-simulation</a>
@@ -844,6 +937,8 @@
     rifs-datasplit command line option
 
       <ul>
+        <li><a href="click.html#cmdoption-rifs-datasplit-check-alignments">--check-alignments</a>
+</li>
         <li><a href="click.html#cmdoption-rifs-datasplit-split-method">--split-method</a>
 </li>
         <li><a href="click.html#cmdoption-rifs-datasplit-split-ratio">--split-ratio</a>
@@ -865,6 +960,35 @@
 
       <ul>
         <li><a href="click.html#cmdoption-rifs-download-noise-arg-NOISE_PACK">NOISE_PACK</a>
+</li>
+      </ul></li>
+      <li>
+    rifs-evaluate command line option
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-evaluate-model">--model</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-spellcheck-model">--spellcheck-model</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-split">--split</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-arg-DATASET">DATASET</a>
+</li>
+        <li><a href="click.html#cmdoption-rifs-evaluate-arg-EXPERIMENT_NAME">EXPERIMENT_NAME</a>
+</li>
+      </ul></li>
+      <li>
+    rifs-evaluate-alignments command line option
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-evaluate-alignments-arg-DATASET">DATASET</a>
+</li>
+      </ul></li>
+      <li>
+    rifs-export-table command line option
+
+      <ul>
+        <li><a href="click.html#cmdoption-rifs-export-table-arg-EXPERIMENT_NAME">EXPERIMENT_NAME</a>
 </li>
       </ul></li>
       <li>
@@ -987,6 +1111,13 @@
 </li>
       </ul></li>
       <li>
+    rifsalignment.experiment
+
+      <ul>
+        <li><a href="out/rifsalignment.html#module-rifsalignment.experiment">module</a>
+</li>
+      </ul></li>
+      <li>
     rifsalignment.preprocess
 
       <ul>
@@ -1043,6 +1174,27 @@
 </li>
       </ul></li>
       <li>
+    rifsdatasets.commonvoicedansk
+
+      <ul>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.commonvoicedansk">module</a>
+</li>
+      </ul></li>
+      <li>
+    rifsdatasets.danpass
+
+      <ul>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.danpass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rifsdatasets.dansketaler
+
+      <ul>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.dansketaler">module</a>
+</li>
+      </ul></li>
+      <li>
     rifsdatasets.den2radio
 
       <ul>
@@ -1057,6 +1209,13 @@
 </li>
       </ul></li>
       <li>
+    rifsdatasets.freesound
+
+      <ul>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.freesound">module</a>
+</li>
+      </ul></li>
+      <li>
     rifsdatasets.librivox
 
       <ul>
@@ -1068,6 +1227,13 @@
 
       <ul>
         <li><a href="out/rifsdatasets.html#module-rifsdatasets.merge_rifsdatasets">module</a>
+</li>
+      </ul></li>
+      <li>
+    rifsdatasets.nstdanishspråkbanken
+
+      <ul>
+        <li><a href="out/rifsdatasets.html#module-rifsdatasets.nstdanishsprakbanken">module</a>
 </li>
       </ul></li>
       <li>

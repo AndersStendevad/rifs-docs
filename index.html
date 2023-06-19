@@ -85,29 +85,51 @@
 <p>This documentation is for all repositories in the rifs is free speech project.
 We have tried to make all components loosely coupled, which should make it
 easier to reuse code.</p>
+<p>This code was used to created the following Thesis:</p>
+<section id="presenting-the-rifs-is-free-speech-toolkit">
+<h2>Presenting the rifs is free speech toolkit:<a class="headerlink" href="#presenting-the-rifs-is-free-speech-toolkit" title="Permalink to this heading"></a></h2>
+<section id="unleashing-the-power-of-unlabelled-speech-data-to-create-the-den2radio-asr-corpus">
+<h3>Unleashing the power of unlabelled speech data to create the Den2Radio ASR corpus<a class="headerlink" href="#unleashing-the-power-of-unlabelled-speech-data-to-create-the-den2radio-asr-corpus" title="Permalink to this heading"></a></h3>
+<p>Abstract:</p>
+<p>Automatic Speech Recognition (ASR) is an important technology that converts
+spoken language to text. While ASR systems have made significant progress in
+English, the same level of accuracy has yet to be achieved in Danish due to the
+limited availability of Danish-specific data. This thesis aims to address this
+challenge by introducing the Den2Radio corpus, a new Danish ASR dataset
+comprising 1.479 hours of unlabelled speech. The corpus exhibits diversity in
+terms of speakers, age groups, topics, and recording environments. In addition,
+three new test sets - LibriVoxDansk, Forskerzonen, and DanskeTaler - are
+presented to evaluate the performance of existing Danish ASR models. To
+facilitate the use of the Den2Radio corpus and enhance accessibility of ASR
+research, the \texttt{ rifs-is-free-speech} toolkit is introduced, which
+provides a comprehensive set of tools for data preprocessing, alignment,
+augmentation, and model evaluation. Experimental results show that our ASR
+model trained on the Den2Radio corpus is in parity with other comparable
+state-of-the-art models in Danish. The contributions of this thesis, including
+the Den2Radio corpus, test sets, and toolkit, aim to advance the field of
+Danish ASR and facilitate future research in the domain.</p>
+</section>
+</section>
+<section id="cite">
+<h2>Cite<a class="headerlink" href="#cite" title="Permalink to this heading"></a></h2>
+<p>If you want to cite this project then you can used the following citation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span><span class="n">stendevad_joensen_2023</span><span class="p">,</span>
+   <span class="n">title</span><span class="o">=</span> <span class="s2">&quot;Presenting the rifs is free speech toolkit: Unleashing the power of unlabelled speech data to create the Den2Radio ASR corpus (Dissertation)&quot;</span><span class="p">,</span>
+   <span class="n">school</span><span class="o">=</span> <span class="s2">&quot;IT University of Copenhagen&quot;</span><span class="p">,</span>
+   <span class="n">author</span><span class="o">=</span> <span class="s2">&quot;Anders Stendevad and Emil Anker Joensen&quot;</span><span class="p">,</span>
+   <span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span>
+   <span class="n">monht</span><span class="o">=</span><span class="s2">&quot;Jun&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Contact the authors for the paper.</p>
+</section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
 <p>All code from this project is using the MIT license. Feel free to reuse the
 code for your own projects.</p>
 <p><a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
 </section>
-<section id="cite">
-<h2>Cite<a class="headerlink" href="#cite" title="Permalink to this heading"></a></h2>
-<p>If you want to cite this project then you can</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span>
-    <span class="n">stendevad_joensen_2023</span><span class="p">,</span>
-    <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Rifs</span> <span class="ow">is</span> <span class="n">free</span> <span class="n">speech</span><span class="p">},</span>
-    <span class="n">publisher</span><span class="o">=</span><span class="p">{</span><span class="n">IT</span> <span class="n">University</span> <span class="n">of</span> <span class="n">Copenhagen</span><span class="p">},</span>
-    <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Stendevad</span><span class="p">,</span> <span class="n">Anders</span> <span class="ow">and</span> <span class="n">Joensen</span><span class="p">,</span> <span class="n">Emil</span> <span class="n">Anker</span><span class="p">},</span>
-    <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2023</span><span class="p">},</span>
-    <span class="n">month</span><span class="o">=</span><span class="p">{</span><span class="n">Jun</span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="content">
-<h1>Content<a class="headerlink" href="#content" title="Permalink to this heading"></a></h1>
 </section>
 <div class="toctree-wrapper compound">
 <ul>
@@ -118,6 +140,9 @@ code for your own projects.</p>
 <li class="toctree-l3"><a class="reference internal" href="click.html#rifs-datasplit">datasplit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="click.html#rifs-download-dataset">download-dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="click.html#rifs-download-noise">download-noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-evaluate">evaluate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-evaluate-alignments">evaluate-alignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="click.html#rifs-export-table">export-table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="click.html#rifs-finetune">finetune</a></li>
 <li class="toctree-l3"><a class="reference internal" href="click.html#rifs-hubert-preprocess">hubert-preprocess</a></li>
 <li class="toctree-l3"><a class="reference internal" href="click.html#rifs-merge-datasets">merge-datasets</a></li>
@@ -194,6 +219,8 @@ code for your own projects.</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.align_csv"><code class="docutils literal notranslate"><span class="pre">align_csv()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.align_experiment_folder"><code class="docutils literal notranslate"><span class="pre">align_experiment_folder()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.check_for_good_alignment"><code class="docutils literal notranslate"><span class="pre">check_for_good_alignment()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.algorithms">rifsalignment.algorithms module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.algorithms.CTC"><code class="docutils literal notranslate"><span class="pre">CTC</span></code></a><ul>
@@ -243,7 +270,13 @@ code for your own projects.</p>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#rifsalignment-experiment-module">rifsalignment.experiment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.experiment">rifsalignment.experiment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#experiment-code">Experiment code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.experiment.align_experiment"><code class="docutils literal notranslate"><span class="pre">align_experiment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.experiment.align_experiment_folder"><code class="docutils literal notranslate"><span class="pre">align_experiment_folder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.experiment.check_for_good_alignment"><code class="docutils literal notranslate"><span class="pre">check_for_good_alignment()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsalignment.html#module-rifsalignment.preprocess">rifsalignment.preprocess module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsalignment.html#rifsalignment.preprocess.prepare_text"><code class="docutils literal notranslate"><span class="pre">prepare_text()</span></code></a></li>
 </ul>
@@ -285,9 +318,27 @@ code for your own projects.</p>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-commonvoicedansk-module">rifsdatasets.commonvoicedansk module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-danpass-module">rifsdatasets.danpass module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-dansketaler-module">rifsdatasets.dansketaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.commonvoicedansk">rifsdatasets.commonvoicedansk module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.commonvoicedansk.CommonVoiceDansk"><code class="docutils literal notranslate"><span class="pre">CommonVoiceDansk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.commonvoicedansk.CommonVoiceDansk.download"><code class="docutils literal notranslate"><span class="pre">CommonVoiceDansk.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.danpass">rifsdatasets.danpass module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.danpass.DanPASS"><code class="docutils literal notranslate"><span class="pre">DanPASS</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.danpass.DanPASS.download"><code class="docutils literal notranslate"><span class="pre">DanPASS.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.dansketaler">rifsdatasets.dansketaler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.dansketaler.DanskeTaler"><code class="docutils literal notranslate"><span class="pre">DanskeTaler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.dansketaler.DanskeTaler.download"><code class="docutils literal notranslate"><span class="pre">DanskeTaler.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.den2radio">rifsdatasets.den2radio module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.den2radio.Den2Radio"><code class="docutils literal notranslate"><span class="pre">Den2Radio</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.den2radio.Den2Radio.download"><code class="docutils literal notranslate"><span class="pre">Den2Radio.download()</span></code></a></li>
@@ -302,7 +353,13 @@ code for your own projects.</p>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-freesound-module">rifsdatasets.freesound module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.freesound">rifsdatasets.freesound module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.freesound.FreeSoundOrg"><code class="docutils literal notranslate"><span class="pre">FreeSoundOrg</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.freesound.FreeSoundOrg.download"><code class="docutils literal notranslate"><span class="pre">FreeSoundOrg.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.librivox">rifsdatasets.librivox module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.librivox.LibriVoxDansk"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.librivox.LibriVoxDansk.download"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk.download()</span></code></a></li>
@@ -314,7 +371,13 @@ code for your own projects.</p>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.merge_rifsdatasets.merge_rifsdatasets"><code class="docutils literal notranslate"><span class="pre">merge_rifsdatasets()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets-nstdanishsprakbanken-module">rifsdatasets.nstdanishspråkbanken module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.nstdanishsprakbanken">rifsdatasets.nstdanishspråkbanken module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken"><code class="docutils literal notranslate"><span class="pre">NSTDanishSpråkbanken</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken.download"><code class="docutils literal notranslate"><span class="pre">NSTDanishSpråkbanken.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifsdatasets.html#module-rifsdatasets.split_dataset">rifsdatasets.split_dataset module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#split-dataset">Split dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="out/rifsdatasets.html#rifsdatasets.split_dataset.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
@@ -443,8 +506,8 @@ code for your own projects.</p>
 <li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.callbacks">rifstrain.callbacks module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#callbacks">Callbacks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger"><code class="docutils literal notranslate"><span class="pre">CsvLogger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_evaluate"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_evaluate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_init_end"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_init_end()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.CsvLogger.on_step_begin"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_step_begin()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.callbacks.Timekeeper"><code class="docutils literal notranslate"><span class="pre">Timekeeper</span></code></a><ul>
@@ -456,7 +519,10 @@ code for your own projects.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.compute_metrics">rifstrain.compute_metrics module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#compute-metrics">Compute metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.compute_metrics.compute_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.compute_metrics.compute_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="out/rifstrain.html#rifstrain.compute_metrics.compute_metrics.calculate_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics.calculate_metrics()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.datasets">rifstrain.datasets module</a><ul>
@@ -466,6 +532,7 @@ code for your own projects.</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="out/rifstrain.html#module-rifstrain.evaluate">rifstrain.evaluate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#evaluate">Evaluate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="out/rifstrain.html#rifstrain.evaluate.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
 </ul>
 </li>

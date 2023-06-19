@@ -63,9 +63,27 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-commonvoicedansk-module">rifsdatasets.commonvoicedansk module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-danpass-module">rifsdatasets.danpass module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-dansketaler-module">rifsdatasets.dansketaler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.commonvoicedansk">rifsdatasets.commonvoicedansk module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.commonvoicedansk.CommonVoiceDansk"><code class="docutils literal notranslate"><span class="pre">CommonVoiceDansk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.commonvoicedansk.CommonVoiceDansk.download"><code class="docutils literal notranslate"><span class="pre">CommonVoiceDansk.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.danpass">rifsdatasets.danpass module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.danpass.DanPASS"><code class="docutils literal notranslate"><span class="pre">DanPASS</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.danpass.DanPASS.download"><code class="docutils literal notranslate"><span class="pre">DanPASS.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.dansketaler">rifsdatasets.dansketaler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.dansketaler.DanskeTaler"><code class="docutils literal notranslate"><span class="pre">DanskeTaler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.dansketaler.DanskeTaler.download"><code class="docutils literal notranslate"><span class="pre">DanskeTaler.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.den2radio">rifsdatasets.den2radio module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.den2radio.Den2Radio"><code class="docutils literal notranslate"><span class="pre">Den2Radio</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.den2radio.Den2Radio.download"><code class="docutils literal notranslate"><span class="pre">Den2Radio.download()</span></code></a></li>
@@ -80,7 +98,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-freesound-module">rifsdatasets.freesound module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.freesound">rifsdatasets.freesound module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.freesound.FreeSoundOrg"><code class="docutils literal notranslate"><span class="pre">FreeSoundOrg</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.freesound.FreeSoundOrg.download"><code class="docutils literal notranslate"><span class="pre">FreeSoundOrg.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.librivox">rifsdatasets.librivox module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.librivox.LibriVoxDansk"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.librivox.LibriVoxDansk.download"><code class="docutils literal notranslate"><span class="pre">LibriVoxDansk.download()</span></code></a></li>
@@ -92,7 +116,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.merge_rifsdatasets.merge_rifsdatasets"><code class="docutils literal notranslate"><span class="pre">merge_rifsdatasets()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#rifsdatasets-nstdanishsprakbanken-module">rifsdatasets.nstdanishspråkbanken module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.nstdanishsprakbanken">rifsdatasets.nstdanishspråkbanken module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken"><code class="docutils literal notranslate"><span class="pre">NSTDanishSpråkbanken</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken.download"><code class="docutils literal notranslate"><span class="pre">NSTDanishSpråkbanken.download()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rifsdatasets.split_dataset">rifsdatasets.split_dataset module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#split-dataset">Split dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifsdatasets.split_dataset.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
@@ -163,7 +193,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="rifsdatasets.split_dataset">
-<span class="sig-prename descclassname"><span class="pre">rifsdatasets.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_test_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.split_dataset" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_test_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_for_bad_alignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.split_dataset" title="Permalink to this definition"></a></dt>
 <dd><p>Split dataset into train, validation and test sets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -174,6 +204,7 @@ Will not overlap between original long audio files.
 So either a wav file is in train, validation or test set.</p></li>
 <li><p><strong>split_ratio</strong> (<em>float</em>) – Ratio to split dataset into train and validation / test sets.</p></li>
 <li><p><strong>split_test_ratio</strong> (<em>float</em>) – Ratio to split between validation and test set. default is 0.5.</p></li>
+<li><p><strong>check_for_bad_alignments</strong> (<em>bool</em>) – Check for bad alignments. Default is False.</p></li>
 <li><p><strong>verbose</strong> (<em>bool</em>) – Print progress.</p></li>
 <li><p><strong>quiet</strong> (<em>bool</em>) – disables output.</p></li>
 <li><p><strong>seed</strong> (<em>int</em>) – Seed for random number generator.</p></li>
@@ -214,14 +245,92 @@ So either a wav file is in train, validation or test set.</p></li>
 </dd></dl>
 
 </section>
-<section id="rifsdatasets-commonvoicedansk-module">
-<h2>rifsdatasets.commonvoicedansk module<a class="headerlink" href="#rifsdatasets-commonvoicedansk-module" title="Permalink to this heading"></a></h2>
+<section id="module-rifsdatasets.commonvoicedansk">
+<span id="rifsdatasets-commonvoicedansk-module"></span><h2>rifsdatasets.commonvoicedansk module<a class="headerlink" href="#module-rifsdatasets.commonvoicedansk" title="Permalink to this heading"></a></h2>
+<p>This module contains the Danpass dataset.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.commonvoicedansk.CommonVoiceDansk">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.commonvoicedansk.</span></span><span class="sig-name descname"><span class="pre">CommonVoiceDansk</span></span><a class="headerlink" href="#rifsdatasets.commonvoicedansk.CommonVoiceDansk" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the DanPASS dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.commonvoicedansk.CommonVoiceDansk.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.commonvoicedansk.CommonVoiceDansk.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="rifsdatasets-danpass-module">
-<h2>rifsdatasets.danpass module<a class="headerlink" href="#rifsdatasets-danpass-module" title="Permalink to this heading"></a></h2>
+<section id="module-rifsdatasets.danpass">
+<span id="rifsdatasets-danpass-module"></span><h2>rifsdatasets.danpass module<a class="headerlink" href="#module-rifsdatasets.danpass" title="Permalink to this heading"></a></h2>
+<p>This module contains the Danpass dataset.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.danpass.DanPASS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.danpass.</span></span><span class="sig-name descname"><span class="pre">DanPASS</span></span><a class="headerlink" href="#rifsdatasets.danpass.DanPASS" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the DanPASS dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.danpass.DanPASS.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.danpass.DanPASS.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="rifsdatasets-dansketaler-module">
-<h2>rifsdatasets.dansketaler module<a class="headerlink" href="#rifsdatasets-dansketaler-module" title="Permalink to this heading"></a></h2>
+<section id="module-rifsdatasets.dansketaler">
+<span id="rifsdatasets-dansketaler-module"></span><h2>rifsdatasets.dansketaler module<a class="headerlink" href="#module-rifsdatasets.dansketaler" title="Permalink to this heading"></a></h2>
+<p>This module contains the DanskeTaler dataset.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.dansketaler.DanskeTaler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.dansketaler.</span></span><span class="sig-name descname"><span class="pre">DanskeTaler</span></span><a class="headerlink" href="#rifsdatasets.dansketaler.DanskeTaler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the DanskeTaler dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.dansketaler.DanskeTaler.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.dansketaler.DanskeTaler.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-rifsdatasets.den2radio">
 <span id="rifsdatasets-den2radio-module"></span><h2>rifsdatasets.den2radio module<a class="headerlink" href="#module-rifsdatasets.den2radio" title="Permalink to this heading"></a></h2>
@@ -317,8 +426,36 @@ Videnskab og Filosofi     219</p>
 </dd></dl>
 
 </section>
-<section id="rifsdatasets-freesound-module">
-<h2>rifsdatasets.freesound module<a class="headerlink" href="#rifsdatasets-freesound-module" title="Permalink to this heading"></a></h2>
+<section id="module-rifsdatasets.freesound">
+<span id="rifsdatasets-freesound-module"></span><h2>rifsdatasets.freesound module<a class="headerlink" href="#module-rifsdatasets.freesound" title="Permalink to this heading"></a></h2>
+<p>This module can download noisepacks from freesound.org.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.freesound.FreeSoundOrg">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.freesound.</span></span><span class="sig-name descname"><span class="pre">FreeSoundOrg</span></span><a class="headerlink" href="#rifsdatasets.freesound.FreeSoundOrg" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the FreeSoundOrg noisepacks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.freesound.FreeSoundOrg.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pack_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.freesound.FreeSoundOrg.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>pack_id</strong> (<em>int</em>) – The id of the noisepack to download.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the noisepack. Optional. Defaults to the freesound pack name.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-rifsdatasets.librivox">
 <span id="rifsdatasets-librivox-module"></span><h2>rifsdatasets.librivox module<a class="headerlink" href="#module-rifsdatasets.librivox" title="Permalink to this heading"></a></h2>
@@ -373,8 +510,34 @@ Videnskab og Filosofi     219</p>
 </dd></dl>
 
 </section>
-<section id="rifsdatasets-nstdanishsprakbanken-module">
-<h2>rifsdatasets.nstdanishspråkbanken module<a class="headerlink" href="#rifsdatasets-nstdanishsprakbanken-module" title="Permalink to this heading"></a></h2>
+<section id="module-rifsdatasets.nstdanishsprakbanken">
+<span id="rifsdatasets-nstdanishsprakbanken-module"></span><h2>rifsdatasets.nstdanishspråkbanken module<a class="headerlink" href="#module-rifsdatasets.nstdanishsprakbanken" title="Permalink to this heading"></a></h2>
+<p>This module contains the NSTDanishSpråkbanken dataset.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifsdatasets.nstdanishspråkbanken.</span></span><span class="sig-name descname"><span class="pre">NSTDanishSpråkbanken</span></span><a class="headerlink" href="#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rifsdatasets.base.Base" title="rifsdatasets.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<p>Dataset for the NSTDanishSpråkbanken dataset.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken.download">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.nstdanishsprakbanken.NSTDanishSprakbanken.download" title="Permalink to this definition"></a></dt>
+<dd><p>Download the dataset to the specified destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_folder</strong> (<em>str</em>) – The destination folder to download the dataset to.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the download progress with steps.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Prints nothing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-rifsdatasets.split_dataset">
 <span id="rifsdatasets-split-dataset-module"></span><h2>rifsdatasets.split_dataset module<a class="headerlink" href="#module-rifsdatasets.split_dataset" title="Permalink to this heading"></a></h2>
@@ -392,7 +555,7 @@ of alignments into one.</p>
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="rifsdatasets.split_dataset.split_dataset">
-<span class="sig-prename descclassname"><span class="pre">rifsdatasets.split_dataset.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_test_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.split_dataset.split_dataset" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rifsdatasets.split_dataset.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_test_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_for_bad_alignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifsdatasets.split_dataset.split_dataset" title="Permalink to this definition"></a></dt>
 <dd><p>Split dataset into train, validation and test sets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -403,6 +566,7 @@ Will not overlap between original long audio files.
 So either a wav file is in train, validation or test set.</p></li>
 <li><p><strong>split_ratio</strong> (<em>float</em>) – Ratio to split dataset into train and validation / test sets.</p></li>
 <li><p><strong>split_test_ratio</strong> (<em>float</em>) – Ratio to split between validation and test set. default is 0.5.</p></li>
+<li><p><strong>check_for_bad_alignments</strong> (<em>bool</em>) – Check for bad alignments. Default is False.</p></li>
 <li><p><strong>verbose</strong> (<em>bool</em>) – Print progress.</p></li>
 <li><p><strong>quiet</strong> (<em>bool</em>) – disables output.</p></li>
 <li><p><strong>seed</strong> (<em>int</em>) – Seed for random number generator.</p></li>

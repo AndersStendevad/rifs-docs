@@ -54,6 +54,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#rifs-datasplit">datasplit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifs-download-dataset">download-dataset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifs-download-noise">download-noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-evaluate">evaluate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-evaluate-alignments">evaluate-alignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifs-export-table">export-table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifs-finetune">finetune</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifs-hubert-preprocess">hubert-preprocess</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifs-merge-datasets">merge-datasets</a></li>
@@ -163,7 +166,8 @@ The CLI is written with click.</p>
 <section id="rifs-align">
 <h3>align<a class="headerlink" href="#rifs-align" title="Permalink to this heading"></a></h3>
 <p>Usage:  align [OPTIONS] DATASET</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>align<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>Custom<span class="o">}</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>align<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS<span class="p">|</span>NSTDanishSp
+<span class="w">           </span>råkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>Custom<span class="o">}</span>
 </pre></div>
 </div>
 <p class="rubric">Options</p>
@@ -201,7 +205,8 @@ The CLI is written with click.</p>
 <section id="rifs-augment">
 <h3>augment<a class="headerlink" href="#rifs-augment" title="Permalink to this heading"></a></h3>
 <p>Usage:  augment [OPTIONS] DATASET</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>augment<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>Custom<span class="o">}</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>augment<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS<span class="p">|</span>NSTDanish
+<span class="w">             </span>Språkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>Custom<span class="o">}</span>
 </pre></div>
 </div>
 <p class="rubric">Options</p>
@@ -223,6 +228,12 @@ The CLI is written with click.</p>
 <dd><p>Preprocess with speed modification.</p>
 </dd></dl>
 
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-augment-include-audio-folder">
+<span class="sig-name descname"><span class="pre">--include-audio-folder</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-augment-include-audio-folder" title="Permalink to this definition"></a></dt>
+<dd><p>Include the audio folder in data augmentation.</p>
+</dd></dl>
+
 <p class="rubric">Arguments</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-rifs-augment-arg-DATASET">
@@ -234,7 +245,8 @@ The CLI is written with click.</p>
 <section id="rifs-datasplit">
 <h3>datasplit<a class="headerlink" href="#rifs-datasplit" title="Permalink to this heading"></a></h3>
 <p>Usage:  datasplit [OPTIONS] DATASET</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>datasplit<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>Custom<span class="o">}</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>datasplit<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS<span class="p">|</span>NSTDani
+<span class="w">               </span>shSpråkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>Custom<span class="o">}</span>
 </pre></div>
 </div>
 <p class="rubric">Options</p>
@@ -261,6 +273,12 @@ The CLI is written with click.</p>
 <dd><p>Ratio of test to dev data.</p>
 </dd></dl>
 
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-datasplit-check-alignments">
+<span class="sig-name descname"><span class="pre">--check-alignments</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-datasplit-check-alignments" title="Permalink to this definition"></a></dt>
+<dd><p>Check if alignments are correct. Requires model_output</p>
+</dd></dl>
+
 <p class="rubric">Arguments</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-rifs-datasplit-arg-DATASET">
@@ -271,8 +289,9 @@ The CLI is written with click.</p>
 </section>
 <section id="rifs-download-dataset">
 <h3>download-dataset<a class="headerlink" href="#rifs-download-dataset" title="Permalink to this heading"></a></h3>
-<p>Usage:  download_dataset DATASET</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>download-dataset<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="o">}</span>
+<p>Usage:  download-dataset DATASET</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>download-dataset<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS<span class="p">|</span>
+<span class="w">                      </span>NSTDanishSpråkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="o">}</span>
 </pre></div>
 </div>
 <p class="rubric">Arguments</p>
@@ -285,7 +304,7 @@ The CLI is written with click.</p>
 </section>
 <section id="rifs-download-noise">
 <h3>download-noise<a class="headerlink" href="#rifs-download-noise" title="Permalink to this heading"></a></h3>
-<p>Usage:  download_noise NOISE_PACK</p>
+<p>Usage:  download-noise NOISE_PACK</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>download-noise<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NOISE_PACK
 </pre></div>
 </div>
@@ -297,11 +316,82 @@ The CLI is written with click.</p>
 </dd></dl>
 
 </section>
+<section id="rifs-evaluate">
+<h3>evaluate<a class="headerlink" href="#rifs-evaluate" title="Permalink to this heading"></a></h3>
+<p>Usage:  evaluate [OPTIONS] DATASET EXPERIMENT_NAME</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>evaluate<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS<span class="p">|</span>NSTDanis
+<span class="w">              </span>hSpråkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>Custom<span class="o">}</span>
+<span class="w">              </span>EXPERIMENT_NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-evaluate-model">
+<span class="sig-name descname"><span class="pre">--model</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;model&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-evaluate-model" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the model on disk or name of Huggingface model to evaluate with</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-evaluate-split">
+<span class="sig-name descname"><span class="pre">--split</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;split&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-evaluate-split" title="Permalink to this definition"></a></dt>
+<dd><p>Which split to evaluate on. Default: test</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-evaluate-spellcheck-model">
+<span class="sig-name descname"><span class="pre">--spellcheck-model</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;spellcheck_model&gt;</span></span><a class="headerlink" href="#cmdoption-rifs-evaluate-spellcheck-model" title="Permalink to this definition"></a></dt>
+<dd><p>Path to spellcheck model. Default: None</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-evaluate-arg-DATASET">
+<span id="cmdoption-rifs-evaluate-arg-dataset"></span><span class="sig-name descname"><span class="pre">DATASET</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-evaluate-arg-DATASET" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-evaluate-arg-EXPERIMENT_NAME">
+<span id="cmdoption-rifs-evaluate-arg-experiment-name"></span><span class="sig-name descname"><span class="pre">EXPERIMENT_NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-evaluate-arg-EXPERIMENT_NAME" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-evaluate-alignments">
+<h3>evaluate-alignments<a class="headerlink" href="#rifs-evaluate-alignments" title="Permalink to this heading"></a></h3>
+<p>Usage:  evaluate-dataset DATASET</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>evaluate-alignments<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPA
+<span class="w">                         </span>SS<span class="p">|</span>NSTDanishSpråkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>
+<span class="w">                         </span>Custom<span class="o">}</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-evaluate-alignments-arg-DATASET">
+<span id="cmdoption-rifs-evaluate-alignments-arg-dataset"></span><span class="sig-name descname"><span class="pre">DATASET</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-evaluate-alignments-arg-DATASET" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="rifs-export-table">
+<h3>export-table<a class="headerlink" href="#rifs-export-table" title="Permalink to this heading"></a></h3>
+<p>Usage:  export-table EXPERIMENT_NAME</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>export-table<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>EXPERIMENT_NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-rifs-export-table-arg-EXPERIMENT_NAME">
+<span id="cmdoption-rifs-export-table-arg-experiment-name"></span><span class="sig-name descname"><span class="pre">EXPERIMENT_NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rifs-export-table-arg-EXPERIMENT_NAME" title="Permalink to this definition"></a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
 <section id="rifs-finetune">
 <h3>finetune<a class="headerlink" href="#rifs-finetune" title="Permalink to this heading"></a></h3>
 <p>Usage:  finetune [OPTIONS] DATASET MODEL_NAME</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>finetune<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>Custom<span class="o">}</span>
-<span class="w">              </span>MODEL_NAME
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>finetune<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS<span class="p">|</span>NSTDanis
+<span class="w">              </span>hSpråkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>Custom<span class="o">}</span><span class="w"> </span>MODEL_NAME
 </pre></div>
 </div>
 <p class="rubric">Options</p>
@@ -351,8 +441,10 @@ The CLI is written with click.</p>
 </section>
 <section id="rifs-hubert-preprocess">
 <h3>hubert-preprocess<a class="headerlink" href="#rifs-hubert-preprocess" title="Permalink to this heading"></a></h3>
-<p>Usage:  hubert_preprocess [OPTIONS] DATASET</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>hubert-preprocess<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>Custom<span class="o">}</span>
+<p>Usage:  hubert-preprocess [OPTIONS] DATASET</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>hubert-preprocess<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">{</span>LibriVoxDansk<span class="p">|</span>Den2Radio<span class="p">|</span>Forskerzonen<span class="p">|</span>DanPASS
+<span class="w">                       </span><span class="p">|</span>NSTDanishSpråkbanken<span class="p">|</span>CommonVoiceDansk<span class="p">|</span>DanskeTaler<span class="p">|</span>Cust
+<span class="w">                       </span>om<span class="o">}</span>
 </pre></div>
 </div>
 <p class="rubric">Options</p>
@@ -383,7 +475,7 @@ The CLI is written with click.</p>
 </section>
 <section id="rifs-merge-datasets">
 <h3>merge-datasets<a class="headerlink" href="#rifs-merge-datasets" title="Permalink to this heading"></a></h3>
-<p>Usage:  merge_datasets [OPTIONS] DATASET, … , DATASET NEW_DATASET</p>
+<p>Usage:  merge-datasets [OPTIONS] DATASET, … , DATASET NEW_DATASET</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rifs<span class="w"> </span>merge-datasets<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>DATASET<span class="o">]</span>...<span class="w"> </span>NEW_DATASET
 </pre></div>
 </div>

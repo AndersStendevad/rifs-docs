@@ -114,55 +114,39 @@
 <p>CLI for rifs package. Contains all the commands that the library supports.
 The CLI is written with click.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: rifs [OPTIONS] COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...
+
+  CLI for rifs package. Contains all the commands that the library supports.
+  The CLI is written with click.
+
+  Usage:  rifs [OPTIONS]
+
+Options:
+  --version              Prints the version of the package.
+  --verbose              Enable verbose output.
+  --quiet                Disable all output.
+  --seed INTEGER         Seed for the random number generator. Default: 0
+  --data-path PATH       Path to the data directory. Default: data
+  --model-path PATH      Path to the model directory. Default: models
+  --output-path PATH     Path to the output directory. Default: output
+  --noise-path PATH      Path to the noise directory. Default: noise
+  --custom-dataset PATH  Name of a custom dataset. Default: None
+  --help                 Show this message and exit.
+
+Commands:
+  align                Usage: align [OPTIONS] DATASET
+  augment              Usage: augment [OPTIONS] DATASET
+  datasplit            Usage: datasplit [OPTIONS] DATASET
+  download-dataset     Usage: download-dataset DATASET
+  download-noise       Usage: download-noise NOISE_PACK
+  evaluate             Usage: evaluate [OPTIONS] DATASET EXPERIMENT_NAME
+  evaluate-alignments  Usage: evaluate-dataset DATASET
+  export-table         Usage: export-table EXPERIMENT_NAME
+  finetune             Usage: finetune [OPTIONS] DATASET MODEL_NAME
+  hubert-preprocess    Usage: hubert-preprocess [OPTIONS] DATASET
+  merge-datasets       Usage: merge-datasets [OPTIONS] DATASET, ...
+  pretrain             Usage: pretrain MODEL
 </pre></div>
 </div>
-<dl>
-<dt>Options:</dt><dd><dl class="option-list">
-<dt><kbd><span class="option">--version</span></kbd></dt>
-<dd><p>Prints the version of the package.</p>
-</dd>
-<dt><kbd><span class="option">--verbose</span></kbd></dt>
-<dd><p>Enable verbose output.</p>
-</dd>
-<dt><kbd><span class="option">--quiet</span></kbd></dt>
-<dd><p>Disable all output.</p>
-</dd>
-<dt><kbd><span class="option">--seed <var>INTEGER</var></span></kbd></dt>
-<dd><p>Seed for the random number generator. Default: 0</p>
-</dd>
-<dt><kbd><span class="option">--data-path <var>PATH</var></span></kbd></dt>
-<dd><p>Path to the data directory. Default: data</p>
-</dd>
-<dt><kbd><span class="option">--model-path <var>PATH</var></span></kbd></dt>
-<dd><p>Path to the model directory. Default: models</p>
-</dd>
-<dt><kbd><span class="option">--output-path <var>PATH</var></span></kbd></dt>
-<dd><p>Path to the output directory. Default: output</p>
-</dd>
-<dt><kbd><span class="option">--noise-path <var>PATH</var></span></kbd></dt>
-<dd><p>Path to the noise directory. Default: noise</p>
-</dd>
-<dt><kbd><span class="option">--custom-dataset <var>PATH</var></span></kbd></dt>
-<dd><p>Name of a custom dataset. Default: None</p>
-</dd>
-<dt><kbd><span class="option">--help</span></kbd></dt>
-<dd><p>Show this message and exit.</p>
-</dd>
-</dl>
-</dd>
-<dt>Commands:</dt><dd><ul class="simple">
-<li><p>align              align [OPTIONS] DATASET</p></li>
-<li><p>augment            augment [OPTIONS] DATASET</p></li>
-<li><p>datasplit          datasplit [OPTIONS] DATASET</p></li>
-<li><p>download-dataset   download_dataset DATASET</p></li>
-<li><p>download-noise     download_noise NOISE_PACK</p></li>
-<li><p>finetune           finetune [OPTIONS] DATASET MODEL_NAME</p></li>
-<li><p>hubert-preprocess  hubert_preprocess [OPTIONS] DATASET</p></li>
-<li><p>merge-datasets     merge_datasets [OPTIONS] DATASET, …</p></li>
-<li><p>pretrain           pretrain MODEL</p></li>
-</ul>
-</dd>
-</dl>
 </section>
 <section id="module-rifs.fairseq">
 <span id="rifs-fairseq-module"></span><h2>rifs.fairseq module<a class="headerlink" href="#module-rifs.fairseq" title="Permalink to this heading"></a></h2>

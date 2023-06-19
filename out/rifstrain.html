@@ -61,8 +61,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.callbacks">rifstrain.callbacks module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#callbacks">Callbacks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger"><code class="docutils literal notranslate"><span class="pre">CsvLogger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger.on_evaluate"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_evaluate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger.on_init_end"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_init_end()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rifstrain.callbacks.CsvLogger.on_step_begin"><code class="docutils literal notranslate"><span class="pre">CsvLogger.on_step_begin()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#rifstrain.callbacks.Timekeeper"><code class="docutils literal notranslate"><span class="pre">Timekeeper</span></code></a><ul>
@@ -74,7 +74,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.compute_metrics">rifstrain.compute_metrics module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#compute-metrics">Compute metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rifstrain.compute_metrics.compute_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rifstrain.compute_metrics.compute_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rifstrain.compute_metrics.compute_metrics.calculate_metrics"><code class="docutils literal notranslate"><span class="pre">compute_metrics.calculate_metrics()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.datasets">rifstrain.datasets module</a><ul>
@@ -84,6 +87,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rifstrain.evaluate">rifstrain.evaluate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#evaluate">Evaluate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rifstrain.evaluate.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
 </ul>
 </li>
@@ -160,18 +164,17 @@
 </section>
 <dl class="py function">
 <dt class="sig sig-object py" id="rifstrain.evaluate">
-<span class="sig-prename descclassname"><span class="pre">rifstrain.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_predict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.evaluate" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rifstrain.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spellcheck_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.evaluate" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluates the model on the given dataset. Can also evaluate intermediate models saved at steps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>csv_test_file</strong> (<em>str</em>) – Path to the test csv file.</p></li>
-<li><p><strong>data_path</strong> (<em>str</em>) – Path to the dataset folder.</p></li>
-<li><p><strong>model_path</strong> (<em>str</em>) – Path to the model file.</p></li>
+<li><p><strong>pretrained_path</strong> (<em>str</em>) – Path to the pretrained model.</p></li>
 <li><p><strong>output_path</strong> (<em>str</em>) – Path to the output folder.</p></li>
-<li><p><strong>dataset_name</strong> (<em>str</em>) – name of dataset to load data from</p></li>
-<li><p><strong>eval_snapshots</strong> (<em>bool</em>) – Whether to evaluate intermediate models saved at steps.</p></li>
-<li><p><strong>max_predict</strong> (<em>int</em>) – Maximum number of predictions to make.</p></li>
+<li><p><strong>experiment_name</strong> (<em>str</em>) – Name of the experiment.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – If True, prints the results of the evaluation progress.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – If True, does not print anything.</p></li>
 </ul>
 </dd>
 </dl>
@@ -222,6 +225,23 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrainerCallback</span></code></p>
 <p>Callback for logging training and evaluation metrics to a csv file.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="rifstrain.callbacks.CsvLogger.on_evaluate">
+<span class="sig-name descname"><span class="pre">on_evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.CsvLogger.on_evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Callback function for logging training and evaluation metrics to a csv file.</p>
+<p>On step on training step begin will write to CSV previous metrics if any</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – </p></li>
+<li><p><strong>state</strong> – </p></li>
+<li><p><strong>control</strong> – </p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="rifstrain.callbacks.CsvLogger.on_init_end">
 <span class="sig-name descname"><span class="pre">on_init_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.CsvLogger.on_init_end" title="Permalink to this definition"></a></dt>
 <dd><p>Callback function for logging training and evaluation metrics to a csv file.</p>
@@ -238,28 +258,11 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="rifstrain.callbacks.CsvLogger.on_step_begin">
-<span class="sig-name descname"><span class="pre">on_step_begin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.CsvLogger.on_step_begin" title="Permalink to this definition"></a></dt>
-<dd><p>Callback function for logging training and evaluation metrics to a csv file.</p>
-<p>On step on training step begin will write to CSV previous metrics if any</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>args</strong> – </p></li>
-<li><p><strong>state</strong> – </p></li>
-<li><p><strong>control</strong> – </p></li>
-<li><p><strong>kwargs</strong> – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="rifstrain.callbacks.Timekeeper">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.callbacks.</span></span><span class="sig-name descname"><span class="pre">Timekeeper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hours</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.Timekeeper" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.callbacks.</span></span><span class="sig-name descname"><span class="pre">Timekeeper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.callbacks.Timekeeper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TrainerCallback</span></code></p>
 <p>Callback to stop training after a certain amount of time</p>
 <dl class="py method">
@@ -297,10 +300,12 @@
 <section id="compute-metrics">
 <h3>Compute metrics<a class="headerlink" href="#compute-metrics" title="Permalink to this heading"></a></h3>
 <p>Compute the different metric used to evaluate.</p>
-<p>Right now we only implement the following metrics:</p>
+<p>Right now we implement the following metrics:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>WER</p></li>
+<li><p>CER</p></li>
+<li><p>Levenshtein Ratio</p></li>
 </ul>
 </div></blockquote>
 <p>This is by default what is loaded when you use compute_metrics</p>
@@ -310,6 +315,26 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.compute_metrics.</span></span><span class="sig-name descname"><span class="pre">compute_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.compute_metrics.compute_metrics" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Compute metrics for the model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rifstrain.compute_metrics.compute_metrics.calculate_metrics">
+<span class="sig-name descname"><span class="pre">calculate_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">references</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.compute_metrics.compute_metrics.calculate_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictions</strong> (<em>str</em>) – Prediction string.</p></li>
+<li><p><strong>references</strong> (<em>str</em>) – Label string.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing the metrics.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -350,7 +375,7 @@ different lengths).</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="rifstrain.datasets.SpeechDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.datasets.</span></span><span class="sig-name descname"><span class="pre">SpeechDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.datasets.SpeechDataset" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rifstrain.datasets.</span></span><span class="sig-name descname"><span class="pre">SpeechDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.datasets.SpeechDataset" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></p>
 <p>SpeechDataset implements a generic Dataset class for the speech datasets</p>
 </dd></dl>
@@ -358,21 +383,30 @@ different lengths).</p></li>
 </section>
 <section id="module-rifstrain.evaluate">
 <span id="rifstrain-evaluate-module"></span><h2>rifstrain.evaluate module<a class="headerlink" href="#module-rifstrain.evaluate" title="Permalink to this heading"></a></h2>
-<p>Evaluate file</p>
+<section id="evaluate">
+<h3>Evaluate<a class="headerlink" href="#evaluate" title="Permalink to this heading"></a></h3>
+<p>This module contains the functions to evaluate the performance of the
+trained model.</p>
+<p>This module contains only one function:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>evaluate_model: Evaluate the performance of the trained model.</p></li>
+</ul>
+</div></blockquote>
+</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="rifstrain.evaluate.evaluate">
-<span class="sig-prename descclassname"><span class="pre">rifstrain.evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_predict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.evaluate.evaluate" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rifstrain.evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_test_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spellcheck_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rifstrain.evaluate.evaluate" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluates the model on the given dataset. Can also evaluate intermediate models saved at steps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>csv_test_file</strong> (<em>str</em>) – Path to the test csv file.</p></li>
-<li><p><strong>data_path</strong> (<em>str</em>) – Path to the dataset folder.</p></li>
-<li><p><strong>model_path</strong> (<em>str</em>) – Path to the model file.</p></li>
+<li><p><strong>pretrained_path</strong> (<em>str</em>) – Path to the pretrained model.</p></li>
 <li><p><strong>output_path</strong> (<em>str</em>) – Path to the output folder.</p></li>
-<li><p><strong>dataset_name</strong> (<em>str</em>) – name of dataset to load data from</p></li>
-<li><p><strong>eval_snapshots</strong> (<em>bool</em>) – Whether to evaluate intermediate models saved at steps.</p></li>
-<li><p><strong>max_predict</strong> (<em>int</em>) – Maximum number of predictions to make.</p></li>
+<li><p><strong>experiment_name</strong> (<em>str</em>) – Name of the experiment.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – If True, prints the results of the evaluation progress.</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – If True, does not print anything.</p></li>
 </ul>
 </dd>
 </dl>
